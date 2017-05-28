@@ -21,3 +21,16 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about');
 });
+
+Route::get('/test', function(){
+	$task = DB::table('tasks')->get();
+	return view('test', compact('task'));
+});
+
+Route::get('/test/{task}', function($id){
+	
+	$task = DB::table('tasks')->find($id);
+	return view('test.show', compact('task'));
+});
+
+// dd($id);

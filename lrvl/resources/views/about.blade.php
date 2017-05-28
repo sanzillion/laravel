@@ -87,6 +87,7 @@
                     <a href="#">About</a>
                     <a href="#">Portfolio</a>
                     <a href="#">Contact</a>
+                    <a href="/test">Test</a>
                 </div>
             </div>
         </div>
