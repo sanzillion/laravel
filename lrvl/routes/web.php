@@ -11,26 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome', [
-        'name' => 'Sanz',
-        'lastname' => 'Moses'
-    ]);
-});
+Route::get('/', 'PostController@index');
+Route::get('/posts/create', 'PostController@create');
+Route::post('/posts', 'PostController@store');
+// Route::get('/posts/{posts}', 'PostController@show');
 
 Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/test', function(){
-	$task = DB::table('tasks')->get();
-	return view('test', compact('task'));
-});
+Route::get('/test', 'TaskController@index'); //class@method
+Route::get('/test/{task}', 'TaskController@show');
 
-Route::get('/test/{task}', function($id){
-	
-	$task = DB::table('tasks')->find($id);
-	return view('test.show', compact('task'));
-});
 
 // dd($id);

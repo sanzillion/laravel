@@ -6,7 +6,11 @@
 </head>
 <body>
 	@foreach ($task as $t)
-		<li><a href="/test/{{$t->id}}">{{ $t->body }}</a></li>
+		<li>
+			<a href="/test/{{$t->id}}">
+				{{ $t->body }}
+			</a>
+		</li>
 	@endforeach
 </body>
 </html>
