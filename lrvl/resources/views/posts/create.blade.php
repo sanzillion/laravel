@@ -17,15 +17,18 @@
 		  </div>
 
 		  <div class="form-group">
-		    <label for="exampleInputPassword1">Body</label>
+		    <label for="body">Body</label>
 		    <textarea name="body" id="body" cols="20" rows="10" class="form-control"></textarea>
 		  </div>
 
+		  <div class="form-group">
+		  	<button type="submit" class="btn btn-primary">Publish</button>
+		  </div>
 
-		  <button type="submit" class="btn btn-primary">Publish</button>
+		@include('layouts.errors')
 
 		</form>
-	
+		
 	</div>
 
 @endsection

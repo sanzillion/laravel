@@ -1,0 +1,23 @@
+
+Homepage for Guest:
+Header = SOS Network (Save our Schools)
+- News
+- About
+- Members
+- Contact
+- Devs
+Footer = Devs
+
+Admin Page:
+Blog type homepage (Any members can post)
+File and Resources Upload
+Bulk Files Upload
+Authentication for SuperUser
+Superuser Crud for Users and SOS Members
+Superuser registration for SOS members
+Access level to files of members
+
+Text API
+- Automatic all members will be receiving notifications via text messages
+- Panel for Registration of Messages
+- 
