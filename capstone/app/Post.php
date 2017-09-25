@@ -9,14 +9,15 @@ class Post extends Model
     	return $this->hasMany(Comment::class);
     }
 
-    public function addComment($body){
+    public function addComment($body, $user){
     	
-    	$this->comments()->create(compact('body'));
+    	// $this->comments()->create(compact('body'), $user);
 
-        // Comment::create([
-        //     'body' => request('body'),
-        //     'post_id' => $this->id
-        // ]);
+        Comment::create([
+            'body' => $body,
+            'post_id' => $this->id,
+            'user_id' => $user
+        ]);
     }
     public function user(){
         return $this->belongsTo(User::class);

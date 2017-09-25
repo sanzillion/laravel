@@ -5,9 +5,11 @@
 
 	<h1>{{ $post->title }}</h1>
 
-	<p class="blog-post-meta">{{ $post->created_at->toFormattedDateString()  }}</p>
+	<p class="blog-post-meta"><strong>{{ $post->user->name }} </strong> on {{ $post->created_at->toFormattedDateString()  }}</p>
 
-	{!! $post->body !!}	<br>
+	<div class="text-justify">{!! $post->body !!}</div>
+		
+	<br>
 
 	@if (count($post->tags))
 		<ul>
@@ -22,24 +24,37 @@
 	@endif
 
 	@if(Auth::check())
-		{{ Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'POST', 'class' => 'pull-right']) }}
+		@if(Auth::user()->id == $post->user->id)
+		{{ Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'POST', 'class' => 'float-right']) }}
 			{{ Form::hidden('_method', 'DELETE') }}
 			{{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
 		{{ Form::close() }}
 
-		<div class="pull-left">
+		<div class="float-left">
 			<a href="/posts/{{ $post->id }}/edit" class="btn btn-success" style="margin-right: 10px;">Edit</a>
 		</div>
+		@endif
 	@endif
+
+	<br>
 
 	<div class="comments">
 		<ul class="list-group">
 		@foreach ($post->comments as $comment)
 			<li class="list-group-item">
-				<strong>
-				{{ $comment->created_at->diffForHumans() }}
-				</strong>
-				{{ $comment->body }}
+				<div class="col-md-9">
+					<strong>
+					{{ $comment->user->name }}&nbsp 
+					</strong>
+					{{ $comment->created_at->diffForHumans() }}:
+					<br>
+					{{ $comment->body }}
+				</div>
+				<div class="col-md-3">
+					<a href="" class="float-right">Delete</a>
+					<a data-toggle="modal" style="margin-right: 10px" data-id="{{ $comment->id }}" 
+					title="edit" class="float-right editComment">Edit</a>
+				</div>
 			</li>			
 		@endforeach
 		</ul>
@@ -49,9 +64,9 @@
 	@if(Auth::check())
 		<div class="card">
 			<div class="card-block" style="padding: 20px 20px">
-				<form method="POST" action="/posts/{{ $post->id }}/comments">
+				<form method="POST" action="/posts/{{ $post->id }}/comments/{{ Auth::user()->id  }}">
 					{{ csrf_field() }}
-
+					<input type="text" id="user" name="userId" value="{{ Auth::user()->id }}" hidden>
 					<div class="form-group">
 						<textarea class="form-control" name="body" id="comment" placeholder="Your comment here" required></textarea>
 					</div>
@@ -66,4 +81,12 @@
 		</div>
 	@endif	
 
+	@include('layouts.comment-modal')
+
+@endsection
+
+
+
+@section ('scripts')
+	<script src="{{ asset('js/master.js') }}"></script>
 @endsection

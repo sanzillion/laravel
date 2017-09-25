@@ -33,4 +33,12 @@ class Admin extends Authenticatable
         return $this->hasMany(Post::class);
     }
 
+    public function isMaster(){
+        if($this->level == 'superuser'){
+            return true;
+        }
+        
+        return false;
+    }
+
 }

@@ -5,6 +5,9 @@
     <p class="blog-post-meta">
     {{ $post->created_at->toFormattedDateString()  }} 
     by {{ $post->user->name }}</p>
-    <p>{!! $post->body !!}</p>
+    
+    <div class="text-justify">
+    	<p>{!! $post->body !!}</p>
+    </div>
 
   </div><!-- /.blog-post -->

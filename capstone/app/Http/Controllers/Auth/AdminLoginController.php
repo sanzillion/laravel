@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Auth;
+use App\Admin;
 
 class AdminLoginController extends Controller
 {
@@ -31,13 +32,19 @@ class AdminLoginController extends Controller
     {
         $this->validate($request, [
             'email' => 'required|email',
-            'password' => 'required|min:6'
+            'password' => 'required|min:5'
         ]);
 
+        $admin = Admin::where('email', $request->email)->first();
+        
         if(!Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)){
             return back()->withErrors([
                 'message' => 'Please check your credentials and try again.'
             ])->withInput($request->only('email', 'remember'));
+        }
+
+        if($admin->isMaster()){
+            return redirect()->intended(route('admin.master'));
         }
 
         return redirect()->intended(route('admin.dashboard'));

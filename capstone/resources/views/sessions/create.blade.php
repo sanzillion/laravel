@@ -17,7 +17,10 @@
 		</div>
 
 		<div class="form-group">
-			<button type="submit" class="btn btn-primary">Sign In</button>
+			<div class="col-md-8 col-md-offset-4">
+				<button type="submit" class="btn btn-primary">Sign In</button>
+				<a href="{{ route('password.request') }}" class="btn btn-link">Forgot Password</a>
+			</div>
 		</div>
 
 		@include('layouts.errors')

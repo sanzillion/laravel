@@ -5,8 +5,10 @@
 /*// Variables
 @import "variables";*/
 
-// Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+/*// Bootstrap
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";*/
+
+@import "node_modules/bootstrap/scss/bootstrap.scss";
 
 //Custom CSS
 @import "blog";
