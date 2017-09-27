@@ -27,18 +27,15 @@ class RegistrationRequest extends FormRequest
         return [
             'name' => 'required|unique:users',   
             'email' => 'required|email|unique:users',
-            'password' => 'required|confirmed'
+            'password' => 'required|confirmed',
+            'institution' => 'required',
+            'phone_number' => 'required|numeric|min:12',
+            'city' => 'required'
         ];
     }
 
     public function persist(){
 
-        $user = User::create([
-            'name' => request()->name,
-            'email' => request()->email,
-            'password' => bcrypt(request()->password)
-        ]);
-
-        auth()->login($user);
+        // auth()->login($user);
     }
 }

@@ -1,5 +1,9 @@
     <script>
       $(document).ready(function(){
+
+        // button pointer problem
+        $('.btn').css("cursor", "pointer");
+
         // console.log("Animation on going...");
         var x = @php
           if($flash){ echo "'".$flash."'"; }else{ echo "''";}

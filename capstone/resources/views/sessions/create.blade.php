@@ -18,8 +18,12 @@
 
 		<div class="form-group">
 			<div class="col-md-8 col-md-offset-4">
-				<button type="submit" class="btn btn-primary">Sign In</button>
-				<a href="{{ route('password.request') }}" class="btn btn-link">Forgot Password</a>
+				<button type="submit" class="btn btn-primary">
+					Sign In
+				</button>
+				<a href="{{ route('password.request') }}" class="btn btn-link">
+					Forgot Your Password?
+				</a>
 			</div>
 		</div>
 

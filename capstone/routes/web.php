@@ -27,8 +27,8 @@ Route::post('/posts/{post}/comments/{user}', 'CommentsController@store');
 Route::put('/comments/{comment}', 'CommentsController@update');
 Route::get('/comments/{comment}', 'CommentsController@edit');
 
-Route::get('/register', 'RegistrationController@create');
-Route::post('/register', 'RegistrationController@store');
+Route::get('/apply', 'PendingUserController@create');
+Route::post('/apply', 'PendingUserController@store');
 
 Route::get('/login', 'SessionsController@create')->name('login');
 Route::post('/login', 'SessionsController@store');
@@ -38,10 +38,14 @@ Route::get('/admin/login', 'Auth\AdminLoginController@show')->name('admin.login'
 Route::post('/admin/login', 'Auth\AdminLoginController@create')->name('admin.submit');
 Route::get('/admin/logout', 'Auth\AdminLoginController@destroy');
 Route::get('/admin', 'AdminController@index')->name('admin.dashboard');
+
 Route::get('/master', 'AdminController@master')->name('admin.master');
 
 
-Route::post('/password/email', 'Auth\ForgotPasswordController@showLinkRequestFrom')->name('password.email');
-Route::get('/password/reset', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.request');
-Route::post('/passowrd/reset', 'Auth\ResetPasswordController@showResetForm');
-Route::get('/passowrd/reset', 'Auth\ResetPasswordController@reset')->name('password.reset');
+Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('/password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
+Route::get('/passowrd/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+
+Route::get('/register/{pending}', 'RegistrationController@store');
+Route::delete('/pendinguser/{pending}', 'PendingUserController@destroy');

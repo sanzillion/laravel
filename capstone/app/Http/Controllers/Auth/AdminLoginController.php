@@ -44,10 +44,10 @@ class AdminLoginController extends Controller
         }
 
         if($admin->isMaster()){
-            return redirect()->intended(route('admin.master'));
+            return redirect()->route('admin.master');
         }
 
-        return redirect()->intended(route('admin.dashboard'));
+        return redirect()->route('admin.dashboard');
 
     }
 

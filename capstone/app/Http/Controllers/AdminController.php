@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Application;
+use App\User;
 use Auth;
 
 class AdminController extends Controller
@@ -17,7 +19,10 @@ class AdminController extends Controller
 
     public function master(){
     	if(Auth::user()->isMaster()){
-    		return view('admin.master');
+            $pendings = Application::all();
+            $users = User::all();
+
+    		return view('admin.master', compact(['pendings', 'users']));
     	}
     	return redirect('/admin')->with(['message' => 'unauthorize']);
     }

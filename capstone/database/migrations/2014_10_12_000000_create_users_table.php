@@ -18,6 +18,21 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->bigInteger('phone_number');
+            $table->string('institution')->nullable();
+            $table->string('city');
+            $table->rememberToken();
+            $table->timestamps();
+        });
+
+        Schema::create('pending_users', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->bigInteger('phone_number');
+            $table->string('institution')->nullable();
+            $table->string('city');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -31,5 +46,6 @@ class CreateUsersTable extends Migration
     public function down()
     {
         Schema::dropIfExists('users');
+        Schema::dropIfExists('pending_users');
     }
 }

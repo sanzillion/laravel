@@ -4,10 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-use App\Http\Requests\RegistrationRequest;
+use App\Application;
+use App\Mail\WelcomeAgain;
 
 class RegistrationController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth:admin', ['except' => 'store']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -34,14 +39,30 @@ class RegistrationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(RegistrationRequest $form)
+    public function store(Application $pending)
     {
 
-        $form->persist();
+        // dd($pending->phone_number);
 
-        session()->flash('message', 'Thanks so much for signing up!');
+        $user = User::create([
+            'name' => $pending->name,
+            'email' => $pending->email,
+            'password' => $pending->password,
+            'phone_number' => $pending->phone_number,
+            'institution' => $pending->institution,
+            'city' => $pending->city,
+        ]);
 
-        return redirect()->home();
+        // delete from pending table
+        $pending->delete();
+
+        // send a welcome mail
+        \Mail::to($user)->send(new WelcomeAgain($user));
+
+        //flash message user registered
+        session()->flash('message', 'User registered!');
+
+        return redirect()->back();
 
     }
 

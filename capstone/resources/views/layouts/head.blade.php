@@ -14,4 +14,5 @@
     <!-- Custom styles for this template -->
     <script src="{{ asset('js/app.js') }}"></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome-4.7.0/css/font-awesome.min.css') }}">
   </head>
