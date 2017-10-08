@@ -83,7 +83,7 @@ class CommentsController extends Controller
 
         $comment->body = request('body');
         
-        $comment->save();
+        $comment->update();
 
         session()->flash('message', 'Comment has been successfully updated!');
         return redirect('/posts/'.request('PostId'));

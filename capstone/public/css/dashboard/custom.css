@@ -1,0 +1,143 @@
+/* your styles go here */
+.incon{
+	padding: 20px 20px;
+}
+
+.pad-top{
+	padding-top: 20px;
+}
+
+.search{
+	/*height: 20px;*/
+}
+
+.modal{
+	z-index: 9999;
+}
+
+.error-report{
+	font-size: 0.8em;
+	position: fixed;
+	top: 30px;
+	left: 40%;
+	z-index: 9999;
+  background-color: #d95350 !important;
+  color: white;
+}
+
+.error-report div{
+	padding: 20px 40px;
+  margin-bottom: 0px;
+}
+
+#flash-message {
+  background-color: #27b585;
+  color: white;
+	position: fixed;
+	top: 30px;
+	left: 40%;
+	z-index: 9999;
+}
+
+.bg-dark{
+	background: #2f333e;
+}
+
+.login-page .form-holder .danger, .login-page .form-holder .form {
+  min-height: 70vh;
+  padding: 40px;
+  height: 100%;
+  background-color: #fff;
+}
+
+.login-page .form-holder div[class*='col-'] {
+  padding: 0;
+}
+
+.login-page .form-holder .danger {
+  background: #d9534f;
+  color: #fff;
+}
+
+.login-page .form-holder .danger h1 {
+  font-size: 2.5em;
+  font-weight: 600;
+}
+
+.login-page .form-holder .danger p {
+  font-weight: 300;
+}
+
+.no-margin{
+  margin: 0px 0px;
+}
+
+.btn{
+  border-radius: 0px;
+  cursor: pointer;
+}
+
+.text-sm{
+  font-size: .8em;
+}
+
+.text-md{
+  font-size: 1em;
+}
+
+.text-xsm{
+  font-size: .6em;
+}
+
+.text-lg{
+  font-size: 1.5em;
+}
+
+.text-xlg{
+  font-size: 3.5em;
+}
+
+.folder-container .fa-folder{
+  color: #F0C45E;
+}
+
+.folder-container .fa-folder-open{
+  color: #F0C45E;
+}
+
+.pagination-folder a{
+  font-size: .9em;
+  color: black;
+  margin-right: 8px;
+}
+
+.folder-badge{
+  position: absolute;
+  padding-right: 10px;
+  margin-right: 0px;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  padding: 0;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.fbadge:hover span{
+  opacity: 1;
+}
+
+.text-red{
+  color: #EB5858; 
+}
+
+.folder-badge:hover{
+  color: #FCF071;
+}
+
+a{
+  cursor: pointer;
+}
+
+

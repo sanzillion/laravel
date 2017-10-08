@@ -13,10 +13,10 @@ let mix = require('laravel-mix');
 
 // mix.js('resources/assets/js/app.js', 'public/js')
 //    .sass('resources/assets/sass/app.scss', 'public/css');
-mix.autoload({
-    jquery: ['$', 'window.jQuery', 'jQuery'],
-    tether: ['window.Tether', 'Tether']
-})
+// mix.autoload({
+//     jquery: ['$', 'window.jQuery', 'jQuery'],
+//     tether: ['window.Tether', 'Tether']
+// })
 
 mix.js([
         'node_modules/jquery/dist/jquery.min.js',

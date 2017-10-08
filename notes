@@ -21,3 +21,12 @@ Access level to files of members
 Text API
 - Automatic all members will be receiving notifications via text messages
 - Panel for Registration of Messages
+
+validation notes
+'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+
+$imageNmae = time().'.'.$request->image->getClientOriginalExtension();
+
+$request->image->move(public_path('images'), $imageName);
+
+return back()->with('success', 'successful!')->with('path',$imageName);

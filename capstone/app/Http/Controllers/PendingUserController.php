@@ -10,7 +10,8 @@ use App\Http\Requests\RegistrationRequest;
 class PendingUserController extends Controller
 {
     public function __construct(){
-        $this->middleware('auth:admin')->except(['store']);
+
+        $this->middleware('auth:admin')->except(['store', 'create']);
     }
     /**
      * Display a listing of the resource.

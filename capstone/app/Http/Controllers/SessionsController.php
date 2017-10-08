@@ -8,7 +8,7 @@ class SessionsController extends Controller
 {
 
     public function __construct(){
-        $this->middleware('guest')->except(['destroy']);
+        $this->middleware('guest')->except(['destroy', 'menu']);
     }
 
     /**
@@ -94,4 +94,16 @@ class SessionsController extends Controller
 
         return redirect()->home();
     }
+
+    public function menu($var){
+        if($var == 'active'){
+            session(['menu' => 'inactive']);
+        }
+        else{
+            session(['menu' => 'active']);
+        }
+
+        return 'success';
+    }
+
 }

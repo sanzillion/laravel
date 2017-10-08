@@ -21,6 +21,15 @@ class CreatePostsTable extends Migration
             $table->string('cover_img')->nullable();
             $table->timestamps();
         });
+
+        Schema::create('pending_posts', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('user_id');
+            $table->string('title');
+            $table->text('body');
+            $table->string('cover_img')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -31,5 +40,6 @@ class CreatePostsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('posts');
+        Schema::dropIfExists('pending_posts');
     }
 }

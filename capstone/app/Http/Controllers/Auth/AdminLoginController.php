@@ -43,6 +43,8 @@ class AdminLoginController extends Controller
             ])->withInput($request->only('email', 'remember'));
         }
 
+        session(['menu' => 'active']);
+
         if($admin->isMaster()){
             return redirect()->route('admin.master');
         }
@@ -70,7 +72,7 @@ class AdminLoginController extends Controller
      */
     public function show()
     {
-        return view('sessions.admin-login');
+        return view('admin.admin-login');
     }
 
     /**

@@ -1,36 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  @include ('layouts.head')
+  @include ('layouts.dashboard.head')
 
   <body>
-
-	@include ('layouts.nav')
-
-    @if ($flash = session('message'))
+  
+  <div class="page home-page">
+	   @include ('layouts.dashboard.header')
+     @if ($flash = session('message'))
       <div id="flash-message" class="alert alert-success" role="alert">
         {{ $flash }}
       </div>
-    @endif
+     @endif
+     <div class="page-content d-flex align-items-stretch">
+       @include ('layouts.dashboard.sidenav')
+       <div class="content-inner">
+         @yield ('content')
+       </div>
+       
+       
+     </div>
+  </div>
 
-    @include ('layouts.dashboard.header')
-
-    <div class="container">
-
-      <div class="row">
-
-        <div class="col-sm-12 blog-main">
-          @yield ('content')
-        </div>
-
-      </div><!-- /.row -->
-
-    </div><!-- /.container -->
-
-	@include ('layouts.footer')
-
-  @yield ('scripts')
+  @include ('layouts.dashboard.scripts')
   @include ('layouts.scripts')
+  @yield ('scripts')
 
   </body>
 </html>

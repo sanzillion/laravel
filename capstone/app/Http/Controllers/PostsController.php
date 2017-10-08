@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Entry;
 use Carbon\Carbon;
 
 class PostsController extends Controller
 {
     public function __construct(){
-        $this->middleware('auth')->except(['index', 'show']);
+        $this->middleware('auth')->except(['index', 'show', 'destroy']);
     }
 
     public function index(){
@@ -41,20 +42,20 @@ class PostsController extends Controller
     	// $post->body = request('body');
 
     	// $post->save(); 
-
-    	// Post::create([
-    	// 	'title' => request('title'),
-    	// 	'body' => request('body')
-    	// ]);
+        // dd(request()->all());
 
         $this->validate(request(), [
             'title' => 'required',
             'body' => 'required'
         ]);
 
-        auth()->user()->publish(new Post(request(['title', 'body'])));
+        Entry::create([
+         'user_id' => request('id'),
+         'title' => request('title'),
+         'body' => request('body')
+        ]);
 
-        session()->flash('message', 'Your post has now been published');
+        session()->flash('message', 'Your post will be validated for approval');
 
     	return redirect('/');
     }
@@ -81,6 +82,6 @@ class PostsController extends Controller
         $post->delete();
 
         session()->flash('message', 'Post has been removed!');
-        return redirect('/');
+        return redirect()->back();
     }
 }

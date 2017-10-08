@@ -57,7 +57,7 @@ class RegistrationController extends Controller
         $pending->delete();
 
         // send a welcome mail
-        \Mail::to($user)->send(new WelcomeAgain($user));
+        // \Mail::to($user)->send(new WelcomeAgain($user));
 
         //flash message user registered
         session()->flash('message', 'User registered!');

@@ -25,6 +25,7 @@
 	</form> --}} 
 	@include ('layouts.errors')
 	{!! Form::open(['method' => 'POST', 'route' => 'post']) !!}
+		{{ Form::hidden('id', auth()->user()->id) }}
     	<div class="form-group">
     		{{ Form::label('title', 'Title') }}
     		{{ Form::text('title', '', ['class' => 'form-control', 'placeholder' => 'Title']) }}

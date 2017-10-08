@@ -20,6 +20,55 @@ $factory->define(App\User::class, function (Faker $faker) {
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
+        'phone_number' => $faker->e164PhoneNumber,
+        'institution' => $faker->company,
+        'city' => $faker->city,
+        'remember_token' => str_random(10),
+    ];
+});
+
+
+$factory->define(App\Post::class, function (Faker $faker) {
+
+    return [
+        'user_id' => App\User::all()->random()->id,
+        'title' => $faker->sentence,
+        'body' => $faker->paragraph,
+    ];
+});
+
+$factory->define(App\Application::class, function (Faker $faker) {
+    static $password;
+
+    return [
+        'name' => $faker->name,
+        'email' => $faker->unique()->safeEmail,
+        'password' => $password ?: $password = bcrypt('secret'),
+        'phone_number' => $faker->e164PhoneNumber,
+        'institution' => $faker->company,
+        'city' => $faker->city,
+        'remember_token' => str_random(10),
+    ];
+});
+
+$factory->define(App\Entry::class, function (Faker $faker) {
+
+    return [
+    	'user_id' => App\User::all()->random()->id,
+        'title' => $faker->sentence,
+        'body' => $faker->paragraph,
+    ];
+});
+
+$factory->define(App\Admin::class, function (Faker $faker) {
+    static $password;
+
+    return [
+        'name' => $faker->name,
+        'phone_number' => $faker->e164PhoneNumber,
+        'email' => $faker->unique()->safeEmail,
+        'level' => 'administrator',
+        'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
     ];
 });

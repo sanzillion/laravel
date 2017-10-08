@@ -85,8 +85,6 @@
 
 @endsection
 
-
-
 @section ('scripts')
 	<script src="{{ asset('js/master.js') }}"></script>
 @endsection
