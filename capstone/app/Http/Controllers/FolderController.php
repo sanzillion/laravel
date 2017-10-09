@@ -29,7 +29,7 @@ class FolderController extends Controller
 
     public function destroy(Folder $folder){
         $folder->delete();
-        return redirect('/file');
+
     }
 
     public function allFolders(){

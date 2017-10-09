@@ -1,6 +1,12 @@
 
 
 $(document).ready(function(){
+//-------------------------
+var fileLink = "/files/get";
+var filesTable = $('.files');
+var back = $('.back');
+var forward = $('.for');
+//---------------------
 
 	$('.newContainer').on("click", function () {
 		$('#newContainer').modal('show');
@@ -75,8 +81,8 @@ $(document).ready(function(){
 						});
 
 					  $('#filename').text(data.filename+"."+data.extension);
-					  // $('#filepic').attr('src', "/storage/files/"+data.filename+"."+data.extension);
-		            	$('.uploader').text("Uploader: "+data.uploader);
+					  $('#filepic').attr('src', "/storage/files/"+data.filename+"."+data.extension);
+		            	$('.uploader').text("Uploader : "+data.uploader);
 		              // $('.post-user').html('<i class="fa fa-user"></i>&nbsp '+data.name+
 		              //   '&nbsp <i class="fa fa-calendar"></i>&nbsp '+data.time);
 		              // $('.card-header').text(data.title);
@@ -132,6 +138,7 @@ loadContainer();
 
 					$('.p-left').val(folders.first_page_url);
 					$('.p-right').val(folders.last_page_url);
+
 				}
 
 			}
@@ -150,14 +157,33 @@ loadContainer();
 
 	$('.folder-container').on("click", ".folder-badge", function(){
 		var id = $(this).attr('id');
+
 		$.ajax({
-			url:"/container/"+id+"/delete",
+			url:"/file/"+id+"/change",
 			method:"POST",
-			data: {_method: 'delete', _token: token},
-			success:function(){
-				loadContainer();
+			data:{_method: 'put', _token: token},
+			success:function(data, status){
+				deleteFolder();
+			},
+			error:function(){
+				console.log("Unable to change files");
 			}
-		})
+		});
+
+		function deleteFolder(){
+			$.ajax({
+				url:"/container/"+id+"/delete",
+				method:"POST",
+				data: {_method: 'delete', _token: token},
+				success:function(){
+					loadFiles();
+					loadContainer()
+				},
+				error:function(){
+					console.log("something went wrong");
+				}
+			})
+		}
 	});
 
 	$('.folder-container').on("click", ".text-xsm", function(){
@@ -167,7 +193,11 @@ loadContainer();
 
 	var prevFolder = "";
 	$('.folder-container').on("click", ".text-xlg", function(){
-		console.log($(this).attr('id'));
+		var folder_id = $(this).attr('id');
+
+		fileLink = "/files/get?folder="+folder_id;
+		// console.log(fileLink);
+		loadFiles();
 
 		if(prevFolder != ''){
 			prevFolder.removeClass('fa-folder-open')
@@ -179,25 +209,17 @@ loadContainer();
 		prevFolder = $(this);
 	});
 
-	$('html').click(function(e){
-		// console.log(e.target);
-		if(!$(e.target).hasClass('fa')){
-			// console.log('clicked outside folders');
-			if(prevFolder != ''){
-				prevFolder.removeClass('fa-folder-open');
-				prevFolder.addClass('fa-folder');
-			}
-		}
-	});
+	// $('html').click(function(e){
+	// 	// console.log(e.target);
+	// 	if(!$(e.target).hasClass('fa')){
+	// 		// console.log('clicked outside folders');
+	// 		if(prevFolder != ''){
+	// 			prevFolder.removeClass('fa-folder-open');
+	// 			prevFolder.addClass('fa-folder');
+	// 		}
+	// 	}
+	// });
 
-
-
-//-------------------------
-var fileLink = "/files/get";
-var filesTable = $('.files');
-var back = $('.back');
-var forward = $('.for');
-//---------------------
 loadFiles();
 //FILES
 // the code below is rendering tables with pagination without 
@@ -244,7 +266,7 @@ loadFiles();
        url:fileLink,
        method:"GET",
        success:function(files){
-          console.log(files);
+          // console.log(files);
 
           //if data retrieved is not empty
           //continue with the code
@@ -253,7 +275,7 @@ loadFiles();
             forBtn(1);
             //if there is only 1 page
             //disable both back and forward button
-            if(files.total <= 10){
+            if(files.total <= 5){
               backBtn(0);
               forBtn(0);
               back.attr('disabled', true);

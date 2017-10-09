@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Folder;
 use App\File;
-use Illuminate\Support\Facades\File as LaraFile;
 
 class FileController extends Controller
 {
@@ -15,15 +14,15 @@ class FileController extends Controller
     }
 
     public function index(){
-     //    $storagePath  = Storage::disk('local')->getDriver()->getAdapter()->getPathPrefix();
-    	// dd($storagePath);
+
     	session(['page' => 'file']);
 
-    	return view('admin.file', compact(['storagePath']));
+    	return view('admin.file');
     }
 
     public function getFiles(){
-        return File::paginate(5);
+        return File::filter(request(['folder']))
+        ->paginate(5);
     }
 
     public function edit(File $file){
@@ -47,6 +46,14 @@ class FileController extends Controller
 
     	$this->validate(request(), $rules);
 
+        // dd(request('file'));
+        if(request('folders') == 'null'){
+            $folder = 0;
+        }
+        else{
+            $folder = request('folders');
+        }
+
     	foreach(request('file') as $file){
     		//file name with extension
     		$filenameWithExt = $file->getClientOriginalName();
@@ -57,13 +64,13 @@ class FileController extends Controller
     		//file name to store
     		$fileNameToStore = $filename.'_'.time();
     		//upload file
-    		$path = $file->storeAs('public', $fileNameToStore);
+    		$path = $file->storeAs('public/files', $fileNameToStore.'.'.$extension);
 
     		File::create([
     			'uploader' => auth()->user()->name,
     			'filename' => $fileNameToStore,
     			'extension' => $extension,
-    			'folder_id' => request('folders')
+    			'folder_id' => $folder
     		]);
     	}
 
@@ -81,22 +88,27 @@ class FileController extends Controller
 
     public function destroy(File $file){
         // dd(LaraFile::size(public_path().$file->filename.'.'.$file->extension));
-
-        dd(Storage::disk('public')->size('cpstn_1507452645.jpg'));
-        if(Storage::disk('public')->exists('cpstn_1507452645.jpg')){
-            dd("exists");
-            // $file->delete();
-
-            // session()->flash('message', 'File Deleted!');
-
-            // return redirect('/file');
+        //IF THE THE ERROR SAYS THERE IS NO FILE IN THAT DIRECTORY THEN THERE IS NO FUCKING FILE! BULLSHIT!
+        $filname = $file->filename.'.'.$file->extension;
+        // dd(public_path());
+        $file_path = public_path("storage/files/{$filname}");
+        if(unlink($file_path) && $file->delete()){
+            session()->flash('message', 'File Deleted!');
+            return redirect('/file');
         }
         else{
-            dd("error");
-            // session()->flash('message', 'Error!');
+            session()->flash('message', 'Error!');
+            return redirect('/file');
+        }
 
-            // return redirect('/file');
-        } 
+    }
+
+    public function change(Folder $folder){
+        $files = File::where('folder_id', $folder->id)->get();
+        foreach($files as $file){
+            $file->folder_id = 0;
+            $file->update();
+        }
     }
 
 }

@@ -4,7 +4,7 @@
 
   <header class="page-header">
     <div class="container-fluid">
-      <h2 class="no-margin-bottom">Manage Files and Containers</h2>
+      <h2 class="no-margin-bottom">Manage SMS</h2>
     </div>
   </header>
   
@@ -295,5 +295,5 @@
 
 @section ('scripts')
   <script src="{{ asset('js/master.js') }}"></script>
-  <script src="{{ asset('js/admin/file.js') }}"></script>
+  <script src="{{ asset('js/admin/sms.js') }}"></script>
 @endsection
