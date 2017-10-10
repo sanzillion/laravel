@@ -22,7 +22,7 @@
               <button type="button" class="btn btn-success btn-sm newContainer">
                 <i class="fa fa-plus icon"></i>&nbsp New Container
               </button>
-              <button type="button" class="btn btn-danger btn-sm deleteFolder">
+              <button type="button" disabled class="btn btn-danger btn-sm deleteFolder">
                 <i class="fa fa-exclamation-triangle icon"></i> 
               </button>
             </h2>
@@ -62,7 +62,7 @@
               <button type="button" class="btn btn-success btn-sm uploadfile">
                 <i class="fa fa-upload icon"></i>&nbsp Upload
               </button>
-              <button type="button" class="btn btn-danger btn-sm deletefiles">
+              <button type="button" class="btn btn-danger btn-sm deleteFiles">
                 <i class="fa fa-exclamation-triangle icon"></i> 
               </button>
             </h2>
@@ -282,6 +282,32 @@
             {{ Form::button('Yes', ['type' => 'submit', 'class' => 'btn btn-danger']) }}
             <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
           {{ Form::close() }}
+        </div>
+      </div>
+          
+    @endslot
+
+    @slot ('modalFooter')
+    @endslot
+  @endcomponent
+
+  @component ('layouts.dashboard.sm-modal')
+    @slot ('id')
+      deleteFiles
+    @endslot
+
+    @slot ('title')
+      <i class="fa fa-asterisk text-danger"></i> You are about to delete ALL files. Are you sure?
+    @endslot
+
+    @slot ('modalBody') 
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <form action="/files/all" method="POST">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <button class="btn btn-danger" type="submit">Yes</button>
+            <button type="button" class="btn btn-secondary no" data-dismiss="modal">No</button>
+          </form>
         </div>
       </div>
           

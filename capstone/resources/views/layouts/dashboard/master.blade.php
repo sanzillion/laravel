@@ -22,7 +22,7 @@
      </div>
   </div>
 
-  @include ('layouts.dashboard.scripts')
+  @include ('layouts.landing.scripts')
   @include ('layouts.scripts')
   @yield ('scripts')
 

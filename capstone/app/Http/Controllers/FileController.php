@@ -101,6 +101,27 @@ class FileController extends Controller
             return redirect('/file');
         }
 
+    } 
+
+   public function destroyFiles(){
+        $files = File::all();
+        
+        foreach($files as $file){
+            $filname = $file->filename.'.'.$file->extension;
+            $file_path = public_path("storage/files/{$filname}");
+
+            if(!unlink($file_path)){
+                session()->flash('message', 'Something went wrong!');
+                return redirect('/file');
+            }
+        }
+
+        File::truncate();
+            
+        session()->flash('message', 'Successfully deleted');
+        return redirect('/file');
+
+
     }
 
     public function change(Folder $folder){

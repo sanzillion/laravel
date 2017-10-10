@@ -82,6 +82,7 @@ Route::get('/file/{files}/search', 'FileController@search');
 Route::get('/file/{file}/edit', 'FileController@edit');
 Route::delete('/file/{file}/delete', 'FileController@destroy');
 Route::put('/file/{folder}/change', 'FileController@change');
+Route::post('/files/all', 'FileController@destroyFiles');
 
 Route::post('/folder/create', 'FolderController@create');
 
@@ -93,3 +94,5 @@ Route::delete('/container/{folder}/delete', 'FolderController@destroy');
 Route::get('/download/{file}', 'DownloadsController@download');
 
 Route::get('/sms', 'SmsController@index');
+
+Route::get('/test', 'TestController@index');

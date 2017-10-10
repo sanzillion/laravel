@@ -12,7 +12,21 @@
 
 	<div class="row incon">
 
-		<div class="col-md-12 col-sm-12">
+		<div class="col-md-4 col-sm-4">
+			<div class="card">
+
+				<div class="container-fluid no-margin">
+					<div class="row pad-top">
+						<h2><i class="fa fa-rocket"></i>&nbsp Master Controls &nbsp
+					
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-md-8 col-sm-8">
 			<div class="card">
 
 				<div class="container-fluid no-margin">

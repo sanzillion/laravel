@@ -17,6 +17,11 @@ var forward = $('.for');
 		$('#deleteFolder').modal('show');
 	}); 
 
+	$('.deleteFiles').on("click", function () {
+		$(this).html('<i class="fa fa-spinner fa-pulse fa-fw"></i>');
+		$('#deleteFiles').modal('show');
+	});
+
 	$('.files').on("click", ".deleteFile", function () {
 	   var id = $(this).data('id');
 	   // console.log("id = "+id);

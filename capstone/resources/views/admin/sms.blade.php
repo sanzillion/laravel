@@ -18,13 +18,8 @@
       <div class="container-fluid no-margin">
         <div class="row pad-top">
           <div class="col-md-12 col-sm-12">
-            <h2><i class="fa fa-archive"></i>&nbsp Manage Containers &nbsp
-              <button type="button" class="btn btn-success btn-sm newContainer">
-                <i class="fa fa-plus icon"></i>&nbsp New Container
-              </button>
-              <button type="button" class="btn btn-danger btn-sm deleteFolder">
-                <i class="fa fa-exclamation-triangle icon"></i> 
-              </button>
+            <h2><i class="fa fa-archive"></i>&nbsp SMS Feature &nbsp
+
             </h2>
           </div>
         </div> 
@@ -37,34 +32,60 @@
 
         <div class="row pad-top">
           <div class="col-md-12 text-center">
-            <h5 class="text-md pagination-folder">
-              <a><i class="fa fa-angle-double-left p-left"></i></a>
-              <span class="num">
-              </span>
-              <a><i class="fa fa-angle-double-right p-right"></i></a>
-            </h5>
+
           </div>
         </div>
 
       </div>
     </div>
     {{-- end of card --}}
+
+    <div class="card">
+      <div class="container-fluid no-margin">
+        <div class="row pad-top">
+          <div class="col-md-12 col-sm-12">
+            <h2><i class="fa fa-mobile"></i> &nbsp Text Msg Form
+            </h2>
+
+              <form action="#" class="pad-top">
+                
+                  <div class="form-group">
+                    <label for="num">Number</label>
+                    <input name="num" type="text" placeholder="Number" class="form-control">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="body">Body Text</label>
+                    <textarea name="body" id="body" cols="30" rows="10" class="form-control">
+                      
+                    </textarea>
+                  </div>
+
+                  <div class="form-group">
+                   <button type="submit" class="btn btn-primary"> 
+                      <i class="fa fa-paper-plane"></i> &nbsp Send
+                   </button>
+                  </div>
+
+              </form>
+              
+            
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   {{-- end of col --}}
   
   <div class="col-md-6 col-sm-6">
+
     <div class="card">
     
       <div class="container-fluid no-margin">
         <div class="row pad-top">
           <div class="col-md-7 col-sm-7">
-            <h2><i class="fa fa-book"></i>&nbsp Files &nbsp
-              <button type="button" class="btn btn-success btn-sm uploadfile">
-                <i class="fa fa-upload icon"></i>&nbsp Upload
-              </button>
-              <button type="button" class="btn btn-danger btn-sm deletefiles">
-                <i class="fa fa-exclamation-triangle icon"></i> 
-              </button>
+            <h2><i class="fa fa-book"></i>&nbsp Blast &nbsp
+
             </h2>
           </div>
           <div class="col-md-5">
@@ -89,23 +110,147 @@
           </tr>
         </thead>
         <tbody class="files">
-            {{-- here goes file table --}}
+
         </tbody>
       </table>
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12 col-sm-12">
-            <button class="btn btn-default btn-sm back">
-              <i class="fa fa-backward"></i>&nbsp Previous
-            </button>
-            <button class="btn btn-default btn-sm for">
-              Next &nbsp<i class="fa fa-forward"></i>
-            </button>
-            {{-- {{ $posts->render() }} --}}
+
           </div>
         </div>
       </div>
     </div>
+
+    <div class="card">
+    
+      <div class="container-fluid no-margin">
+        <div class="row pad-top">
+          <div class="col-md-7 col-sm-7">
+            <h2><i class="fa fa-book"></i>&nbsp Admin &nbsp
+
+            </h2>
+          </div>
+          <div class="col-md-5">
+            <div class="form-group float-right">
+              <div class="input-group mb-2 mr-sm-2 mb-sm-0" style="height: 25px;">
+                <div class="input-group-addon"><i class="fa fa-search" style="font-size: 10px;"></i></div>
+                <input type="text" class="form-control form-control-sm searchFiles" placeholder="search">
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+
+      <table class="table table-sm">
+        <thead class="thead-inverse">
+          <tr>
+            <th>#</th>
+            <th>Uploader</th>
+            <th>Filename</th>
+            <th>Type</th>
+            <th>Option</th>
+          </tr>
+        </thead>
+        <tbody class="files">
+
+        </tbody>
+      </table>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+    
+      <div class="container-fluid no-margin">
+        <div class="row pad-top">
+          <div class="col-md-7 col-sm-7">
+            <h2><i class="fa fa-book"></i>&nbsp User &nbsp
+
+            </h2>
+          </div>
+          <div class="col-md-5">
+            <div class="form-group float-right">
+              <div class="input-group mb-2 mr-sm-2 mb-sm-0" style="height: 25px;">
+                <div class="input-group-addon"><i class="fa fa-search" style="font-size: 10px;"></i></div>
+                <input type="text" class="form-control form-control-sm searchFiles" placeholder="search">
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+
+      <table class="table table-sm">
+        <thead class="thead-inverse">
+          <tr>
+            <th>#</th>
+            <th>Uploader</th>
+            <th>Filename</th>
+            <th>Type</th>
+            <th>Option</th>
+          </tr>
+        </thead>
+        <tbody class="files">
+
+        </tbody>
+      </table>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+    
+      <div class="container-fluid no-margin">
+        <div class="row pad-top">
+          <div class="col-md-7 col-sm-7">
+            <h2><i class="fa fa-book"></i>&nbsp Custom &nbsp
+
+            </h2>
+          </div>
+          <div class="col-md-5">
+            <div class="form-group float-right">
+              <div class="input-group mb-2 mr-sm-2 mb-sm-0" style="height: 25px;">
+                <div class="input-group-addon"><i class="fa fa-search" style="font-size: 10px;"></i></div>
+                <input type="text" class="form-control form-control-sm searchFiles" placeholder="search">
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+
+      <table class="table table-sm">
+        <thead class="thead-inverse">
+          <tr>
+            <th>#</th>
+            <th>Uploader</th>
+            <th>Filename</th>
+            <th>Type</th>
+            <th>Option</th>
+          </tr>
+        </thead>
+        <tbody class="files">
+
+        </tbody>
+      </table>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
   </div>
 
