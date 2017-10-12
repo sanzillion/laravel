@@ -10,4 +10,10 @@
 			echo "'".session('page')."'";
 		@endphp
 	@endif
+
+	$(document).ready(function(){
+		$('.sidebar li').removeClass('active');
+	  	$('.'+session).addClass('active');
+	})
+
 </script>

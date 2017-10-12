@@ -2,6 +2,7 @@
 <html lang="en">
 
 	@include ('layouts.landing.head')
+	@yield ('extrahead');
 
 	<body>
      	@if ($flash = session('message'))
@@ -13,6 +14,8 @@
 
 		@include ('layouts.landing.nav')
 		@yield ('content')
+
+		@include ('layouts.landing.footer')
 
 		@include ('layouts.landing.scripts')
 		@include ('layouts.scripts')

@@ -5,7 +5,7 @@
         $('.btn').css("cursor", "pointer");
         // console.log("Animation on going...");
         var x = @php
-          if($flash){ echo "'".$flash."'"; }else{ echo "''";}
+          if(isset($flash)){ echo "'".$flash."'"; }else{ echo "''";}
         @endphp 
 
         var error = @php

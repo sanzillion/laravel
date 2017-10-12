@@ -1,9 +1,25 @@
 
+          <h6><b>SEARCH</b></h6>
+          <hr class="style1">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search Posts..">
+            <div class="input-group-btn">
+              <button class="btn btn-default" type="submit">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </div>
+          <hr>
           <div class="sidebar-module sidebar-module-inset">
             <h4>About</h4>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+            <p class="text-justify" style="color:gray"><i>The Save our schools Network</i> is a network of child rights advocates, organizations and various stakeholders working together to bring light and take action on the ongoing violation of children’s right to education, particularly those in the context of militarization and attacks on schools.</p>
           </div>
+          <hr>
+          <h5><b>RECENT POSTS</b></h5>
+          <hr class="style2">
+          <p class="con-p">NIGGA NIGGA NIGGA</p>
           <div class="sidebar-module">
+          <hr>
             <h4>Archives</h4>
             <ol class="list-unstyled">
               @foreach ($archives as $stats)
@@ -14,7 +30,7 @@
             </ol>
           </div>
 
-          <div class="sidebar-module">
+{{--           <div class="sidebar-module">
             <h4>Tags</h4>
             <ol class="list-unstyled">
               @foreach ($tags as $tag)
@@ -25,13 +41,13 @@
                 </li>
               @endforeach
             </ol>
-          </div>
+          </div> --}}
 
           <div class="sidebar-module">
-            <h4>Elsewhere</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">GitHub</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Facebook</a></li>
+            <h4>Connect with us:</h4>
+            <ol class="list-unstyled ">
+              <li><a class="text-green" href="#"><i class="fa fa-twitter "></i> Twitter</a></li>
+              <li><a class="text-green" href="#"><i class="fa fa-facebook-square"></i> Facebook</a></li>
+              <li><a class="text-green" href="#"><i class="fa fa-wordpress"></i> Wordpress</a></li>
             </ol>
           </div> 

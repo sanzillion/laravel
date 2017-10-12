@@ -94,5 +94,13 @@ Route::delete('/container/{folder}/delete', 'FolderController@destroy');
 Route::get('/download/{file}', 'DownloadsController@download');
 
 Route::get('/sms', 'SmsController@index');
+Route::get('/sms/{sms}/edit', 'SmsController@edit');
+Route::put('/sms/{sms}/update', 'SmsController@update');
+
+Route::post('/send/create', 'SendController@create');
+Route::get('/get/{code}', 'SendController@get');
 
 Route::get('/test', 'TestController@index');
+Route::get('/test/about', 'TestController@about');
+Route::get('/test/members', 'TestController@members');
+Route::get('/test/developers', 'TestController@devs');

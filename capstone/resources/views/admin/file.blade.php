@@ -14,20 +14,19 @@
 
   <div class="col-md-6 col-sm-6">
     <div class="card">
-
-      <div class="container-fluid no-margin">
-        <div class="row pad-top">
+      <div class="card-header">
           <div class="col-md-12 col-sm-12">
             <h2><i class="fa fa-archive"></i>&nbsp Manage Containers &nbsp
               <button type="button" class="btn btn-success btn-sm newContainer">
                 <i class="fa fa-plus icon"></i>&nbsp New Container
               </button>
-              <button type="button" disabled class="btn btn-danger btn-sm deleteFolder">
-                <i class="fa fa-exclamation-triangle icon"></i> 
-              </button>
+              @if(auth()->user()->isMaster())
+                <button type="button" class="btn btn-danger btn-sm deleteFolder">
+                  <i class="fa fa-exclamation-triangle icon"></i> 
+                </button>
+              @endif
             </h2>
           </div>
-        </div> 
       </div>
 
       <div class="container-fluid no-margin">
@@ -62,9 +61,11 @@
               <button type="button" class="btn btn-success btn-sm uploadfile">
                 <i class="fa fa-upload icon"></i>&nbsp Upload
               </button>
-              <button type="button" class="btn btn-danger btn-sm deleteFiles">
-                <i class="fa fa-exclamation-triangle icon"></i> 
-              </button>
+              @if(auth()->user()->isMaster())
+                <button type="button" class="btn btn-danger btn-sm deleteFiles">
+                  <i class="fa fa-exclamation-triangle icon"></i> 
+                </button>
+              @endif
             </h2>
           </div>
           <div class="col-md-5">

@@ -13,7 +13,26 @@ class TestController extends Controller
      */
     public function index()
     {
+        session(['page' => 'news']);
         return view('guest.index');
+    }
+    
+    public function about()
+    {
+        session(['page' => 'about']);
+        return view('guest.about');
+    }    
+    
+    public function members()
+    {
+        session(['page' => 'members']);
+        return view('guest.members');
+    }
+    
+    public function devs()
+    {
+        session(['page' => 'devs']);
+        return view('guest.devs');
     }
 
     /**

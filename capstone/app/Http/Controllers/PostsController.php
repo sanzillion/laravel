@@ -82,6 +82,6 @@ class PostsController extends Controller
         $post->delete();
 
         session()->flash('message', 'Post has been removed!');
-        return redirect()->back();
+        return redirect('/');
     }
 }

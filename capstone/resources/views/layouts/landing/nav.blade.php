@@ -12,25 +12,22 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav mx-auto text-black">
-          <li class="nav-item active px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="index.html">News
+          <li class="nav-item px-lg-4 news">
+            <a class="nav-link text-uppercase text-expanded" href="/test">News
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="about.html">About</a>
+          <li class="nav-item px-lg-4 about">
+            <a class="nav-link text-uppercase text-expanded" href="/test/about">About</a>
           </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="members.html">Members</a>
+          <li class="nav-item px-lg-4 members">
+            <a class="nav-link text-uppercase text-expanded" href="/test/members">Members</a>
           </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="blog.html">Blog</a>
+          <li class="nav-item px-lg-4 devs">
+            <a class="nav-link text-uppercase text-expanded" href="/test/developers">Devs</a>
           </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="contact.html">Contact</a>
-          </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="#">Developers</a>
+          <li class="nav-item px-lg-4 login">
+            <a class="nav-link text-uppercase text-expanded" href="/login">Login</a>
           </li>
         </ul>
       </div>

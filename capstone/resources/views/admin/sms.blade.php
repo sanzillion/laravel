@@ -50,14 +50,13 @@
               <form action="#" class="pad-top">
                 
                   <div class="form-group">
-                    <label for="num">Number</label>
-                    <input name="num" type="text" placeholder="Number" class="form-control">
+                    <label for="num">Number : </label>
+                    <input name="num" type="text" placeholder="Ex. 639074239579" class="form-control form-control-sm">
                   </div>
 
                   <div class="form-group">
-                    <label for="body">Body Text</label>
-                    <textarea name="body" id="body" cols="30" rows="10" class="form-control">
-                      
+                    <label for="body">Body Text : </label>
+                    <textarea name="body" id="body" cols="20" rows="5" class="form-control form-control-sm" maxlength="130">
                     </textarea>
                   </div>
 
@@ -80,168 +79,81 @@
   <div class="col-md-6 col-sm-6">
 
     <div class="card">
-    
+      <div class="card-header">
+        <h2><i class="fa fa-globe"></i>&nbsp Blast &nbsp
+            <button class="btn btn-info btn-sm float-right editSms" value="{{ $sms[0]->id }}">
+            <i class="fa fa-edit"></i></button> 
+        </h2>
+      </div>
       <div class="container-fluid no-margin">
         <div class="row pad-top">
-          <div class="col-md-7 col-sm-7">
-            <h2><i class="fa fa-book"></i>&nbsp Blast &nbsp
-
-            </h2>
+          <div class="col-md-3 col-sm-3">
+            <button class="btn btn-primary sendSms" value="{{ $sms[0]->id }}">
+              <i class="fa fa-paper-plane"></i>&nbsp Send
+            </button>
           </div>
-          <div class="col-md-5">
-            <div class="form-group float-right">
-              <div class="input-group mb-2 mr-sm-2 mb-sm-0" style="height: 25px;">
-                <div class="input-group-addon"><i class="fa fa-search" style="font-size: 10px;"></i></div>
-                <input type="text" class="form-control form-control-sm searchFiles" placeholder="search">
-              </div>
-            </div>
+          <div class="col-md-9 col-sm-9">
+            <p><b>Msg :</b> {{ $sms[0]->body }}</p>
           </div>
         </div> 
       </div>
+    </div>
 
-      <table class="table table-sm">
-        <thead class="thead-inverse">
-          <tr>
-            <th>#</th>
-            <th>Uploader</th>
-            <th>Filename</th>
-            <th>Type</th>
-            <th>Option</th>
-          </tr>
-        </thead>
-        <tbody class="files">
-
-        </tbody>
-      </table>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12 col-sm-12">
-
+    <div class="card">
+      <div class="card-header">
+        <h2><i class="fa fa-user-secret"></i>&nbsp Admin &nbsp
+            <button class="btn btn-info btn-sm float-right editSms" value="{{ $sms[1]->id }}">
+              <i class="fa fa-edit"></i></button> 
+        </h2>
+      </div>
+      <div class="container-fluid no-margin">
+        <div class="row pad-top">
+          <div class="col-md-3 col-sm-3">
+            <button class="btn btn-primary sendSms" value="{{ $sms[1]->id }}">
+              <i class="fa fa-paper-plane"></i>&nbsp Send
+            </button>
           </div>
-        </div>
+          <div class="col-md-9 col-sm-9">
+            <p><b>Msg :</b> {{ $sms[1]->body }}</p>
+          </div>
+        </div> 
       </div>
     </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h2><i class="fa fa-users"></i>&nbsp User &nbsp
+            <button class="btn btn-info btn-sm float-right editSms" value="{{ $sms[2]->id }}">
+              <i class="fa fa-edit"></i></button> 
+        </h2>
+      </div>
+      <div class="container-fluid no-margin">
+        <div class="row pad-top">
+          <div class="col-md-3 col-sm-3">
+              <button class="btn btn-primary sendSms" value="{{ $sms[2]->id }}">
+                <i class="fa fa-paper-plane"></i>&nbsp Send
+              </button>
+          </div>
+          <div class="col-md-9 col-sm-9">
+            <p><b>Msg :</b> {{ $sms[2]->body }}</p>
+          </div>
+        </div> 
+      </div>
+    </div>
+
 
     <div class="card">
     
       <div class="container-fluid no-margin">
         <div class="row pad-top">
           <div class="col-md-7 col-sm-7">
-            <h2><i class="fa fa-book"></i>&nbsp Admin &nbsp
+            <h2><i class="fa fa-user-plus"></i>&nbsp Custom &nbsp
 
             </h2>
-          </div>
-          <div class="col-md-5">
-            <div class="form-group float-right">
-              <div class="input-group mb-2 mr-sm-2 mb-sm-0" style="height: 25px;">
-                <div class="input-group-addon"><i class="fa fa-search" style="font-size: 10px;"></i></div>
-                <input type="text" class="form-control form-control-sm searchFiles" placeholder="search">
-              </div>
-            </div>
           </div>
         </div> 
       </div>
 
-      <table class="table table-sm">
-        <thead class="thead-inverse">
-          <tr>
-            <th>#</th>
-            <th>Uploader</th>
-            <th>Filename</th>
-            <th>Type</th>
-            <th>Option</th>
-          </tr>
-        </thead>
-        <tbody class="files">
-
-        </tbody>
-      </table>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12 col-sm-12">
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-    
-      <div class="container-fluid no-margin">
-        <div class="row pad-top">
-          <div class="col-md-7 col-sm-7">
-            <h2><i class="fa fa-book"></i>&nbsp User &nbsp
-
-            </h2>
-          </div>
-          <div class="col-md-5">
-            <div class="form-group float-right">
-              <div class="input-group mb-2 mr-sm-2 mb-sm-0" style="height: 25px;">
-                <div class="input-group-addon"><i class="fa fa-search" style="font-size: 10px;"></i></div>
-                <input type="text" class="form-control form-control-sm searchFiles" placeholder="search">
-              </div>
-            </div>
-          </div>
-        </div> 
-      </div>
-
-      <table class="table table-sm">
-        <thead class="thead-inverse">
-          <tr>
-            <th>#</th>
-            <th>Uploader</th>
-            <th>Filename</th>
-            <th>Type</th>
-            <th>Option</th>
-          </tr>
-        </thead>
-        <tbody class="files">
-
-        </tbody>
-      </table>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12 col-sm-12">
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-    
-      <div class="container-fluid no-margin">
-        <div class="row pad-top">
-          <div class="col-md-7 col-sm-7">
-            <h2><i class="fa fa-book"></i>&nbsp Custom &nbsp
-
-            </h2>
-          </div>
-          <div class="col-md-5">
-            <div class="form-group float-right">
-              <div class="input-group mb-2 mr-sm-2 mb-sm-0" style="height: 25px;">
-                <div class="input-group-addon"><i class="fa fa-search" style="font-size: 10px;"></i></div>
-                <input type="text" class="form-control form-control-sm searchFiles" placeholder="search">
-              </div>
-            </div>
-          </div>
-        </div> 
-      </div>
-
-      <table class="table table-sm">
-        <thead class="thead-inverse">
-          <tr>
-            <th>#</th>
-            <th>Uploader</th>
-            <th>Filename</th>
-            <th>Type</th>
-            <th>Option</th>
-          </tr>
-        </thead>
-        <tbody class="files">
-
-        </tbody>
-      </table>
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12 col-sm-12">
@@ -258,33 +170,32 @@
 
   @component('layouts.dashboard.sm-modal')
     @slot ('id')
-      newContainer
+      editSms
     @endslot
 
     @slot ('title')
-      <div class="text-info post-user text-lg">
-         <i class="fa fa-plus-square"></i> &nbsp Add Container
+      <div class="text-info post-user text-lg title">
+         
       </div>
     @endslot
 
     @slot ('modalBody') 
-    <form action="/folder/create" method="POST">
+    <form id="smsForm" action="" method="POST">
     <div class="row">
       <div class="col-md-10 offset-md-1">
-
+        <input id="method" type="hidden" name="_method" value="">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="form-group">
-          <input type="text" name="name" class="form-control form-control-sm" placeholder="Container Name">
+          <textarea id="bodyEdit" type="text" name="body" class="form-control form-control-sm" placeholder="Container Name" maxlength="50"></textarea>
         </div>
-
       </div>
     </div>
 
     <div class="text-center">
-      <button type="submit" class="btn btn-info">Save</button>
-      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <button type="submit" class="btn btn-info">Update</button>
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
     </div>
-
+      <hr>
     </form>
     @endslot
 
@@ -334,53 +245,6 @@
     @endslot
   @endcomponent
 
-  @component('layouts.dashboard.modal')
-    @slot ('id')
-      viewFile
-    @endslot
-
-    @slot ('title')
-      <div class="text-info post-user">
-        <i class="fa fa-eye-slash"></i> &nbsp File Upload
-      </div>
-    @endslot
-
-    @slot ('modalBody') 
-    <form action="/file/create" method="POST" enctype="multipart/form-data" id="update">
-      <input name="_method" type="hidden" value="PUT">
-      <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-      <div class="row">
-        <div class="col-md-10 offset-md-1">
-
-        <div class="card">
-        <img class="card-img-top img-fluid" id="filepic" src="">
-        <div class="card-body">
-          <h4 class="card-title"></h4>
-          <h3 class="uploader"></h3>
-          <p id="filename" class="card-text">
-                
-          </p>
-          <select name="folders" id="vfolders" class="custom-select vfolders">
-          </select>
-        </div>
-        </div>
-
-        </div>
-      </div>
-
-      <div class="text-center pad-top">
-        <button type="submit" class="btn btn-info">Update</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-
-    </form>
-    @endslot
-
-    @slot ('modalFooter')
-    @endslot
-  @endcomponent
-
   @component('layouts.dashboard.sm-modal')
     @slot ('id')
       deleteFolder
@@ -410,31 +274,6 @@
     @endslot
   @endcomponent
 
-  @component ('layouts.dashboard.sm-modal')
-    @slot ('id')
-      deleteFile
-    @endslot
-
-    @slot ('title')
-      <i class="fa fa-asterisk text-danger"></i> You are about to delete a file. Are you sure?
-    @endslot
-
-    @slot ('modalBody') 
-      <div class="row">
-        <div class="col-md-12 col-sm-12">
-          {{ Form::open(['action' => ['FileController@destroy', ''], 'method' => 'POST', 'class' => 'float-left', 'id' => 'fileDelete']) }}
-            {{ Form::hidden('_method', 'DELETE') }}
-            {{ Form::button('Yes', ['type' => 'submit', 'class' => 'btn btn-danger']) }}
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-          {{ Form::close() }}
-        </div>
-      </div>
-          
-    @endslot
-
-    @slot ('modalFooter')
-    @endslot
-  @endcomponent
 
 @endsection
 

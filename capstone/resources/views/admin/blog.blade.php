@@ -98,9 +98,11 @@
 				<div class="row pad-top">
 					<div class="col-md-6 col-sm-6">
 						<h2><i class="fa fa-book"></i>&nbsp Blog Posts &nbsp
-							<button type="button" class="btn btn-danger btn-sm deleteAllPosts">
-							  <i class="fa fa-exclamation-triangle icon"></i>
-							</button>
+							@if(auth()->user()->isMaster())
+								<button type="button" class="btn btn-danger btn-sm deleteAllPosts">
+								  <i class="fa fa-exclamation-triangle icon"></i>
+								</button>
+							@endif
 						</h2>
 					</div>
 					<div class="col-md-6">

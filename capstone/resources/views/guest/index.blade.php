@@ -84,10 +84,10 @@
           <div class="row">
             <div class="col-md-8">
               <div class="update-1">
-                <h5><b>MISSION UPDATES</b></h5>
+                <h5><b>SOS NEWS</b></h5>
                 <hr class="style2">
                 <div class="news-title">
-                  <h4>SOS TO PUBLIC: INTENSIFYING STATE FASCISM NEEDS INTENSIFYING COLLECTIVE ACTION</h4>
+                <h4>SOS TO PUBLIC: INTENSIFYING STATE FASCISM NEEDS INTENSIFYING COLLECTIVE ACTION</h4>
                 </div>
                 <img src="{{ asset('images/sossos.png') }}" class="img-fluid img1">
                 <p class="con-p">The Save Our Schools (SOS) network called for stronger public vigilance and collective action amidst blatant undermining of human rights in the country.</p>
@@ -96,19 +96,13 @@
                 <p class="con-p">The group called on the public to unite and fight state fascism. “Needless to say, we cannot hope for justice to be given by a government ruled by a fascist president. Our hope relies on our unity and collective action. Intensified rights violations require massive and intensified actions,” Malundras continued.</p>
                 <p class="con-p">SOS network mentioned that concerted efforts and support of rights advocates gave birth to their own network which will launch its first National conference on Saturday, 16th of September, 1:00 PM-5:30 PM at Benitez Hall, University of the Philippines Diliman. “We need to speak and act for thousands of victims, of children and young people murdered by the Duterte government like Obello Bay-ao, a Manobo recently killed by CAFGU and AFP-backed Alamara, and other members of national minority groups who are here in Metro Manila for the Lakbayan ng Pambansang Minorya 2017,” concluded Malundras.</p>
               </div>
-              <div class="update-2">
-                
-                <h5><b>MISSIONARY SPOTLIGHT</b></h5>
-                <hr class="style2">
-                <p class="con-p">ian is a church planter in easetern China. He was converted as a teenager through the example of his Christian mother. He has had many opportunities to serve the Lord throughout China, and he is passionate for the Chinese church to be strengthened in the truth.</p>
-              </div>
             
             </div>
             <div class="col-md-4">
-              <h5><b>RECENT POSTS</b></h5>
-              <hr class="style2">
-              <p class="con-p">NIGGA NIGGA NIGGA</p>
-          </div>
+
+              @include('layouts.sidebar')
+
+            </div>
           </div>
           
         </div>

@@ -17,9 +17,16 @@ class CreateSmsTable extends Migration
             $table->increments('id');
             $table->string('sender');
             $table->string('recipient');
-            $table->string('title');
             $table->text('body');
             $table->string('code');
+            $table->timestamps();
+        });
+
+        Schema::create('ship', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('sender');
+            $table->text('recipient');
+            $table->text('body');
             $table->timestamps();
         });
     }
@@ -32,5 +39,6 @@ class CreateSmsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('sms');
+        Schema::dropIfExists('ship');
     }
 }
