@@ -33,7 +33,7 @@ ul {
 }
 
 section {
-  padding: 50px 0;
+  padding: 20px 0;
 }
 
 canvas {
@@ -130,7 +130,7 @@ button, input {
 .card {
   border-radius: 0;
   border: none;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1), -1px 0 2px rgba(0, 0, 0, 0.05);
   background-color: white;
   overflow-x: auto;
@@ -177,8 +177,13 @@ button, input {
   color: #fff;
 }
 
-.bg-red:hover {
+.bg-redder{
+  background-color: #DF3E3E !important;
   color: #fff;
+}
+
+.bg-red:hover {
+  color: white;
 }
 
 .bg-blue {
@@ -201,6 +206,11 @@ button, input {
 
 .bg-green {
   background: #54e69d !important;
+  color: #fff;
+}
+
+.bg-greener {
+  background: #3AA73A !important;
   color: #fff;
 }
 
@@ -231,11 +241,15 @@ button, input {
 }
 
 .bg-white {
-  background: #252830 !important;
+  background: #ffffff !important;
 }
 
 .text-red {
   color: #ff7676;
+}
+
+.text-redder{
+  color: #DF3E3E !important;
 }
 
 .text-red:hover {
@@ -252,6 +266,10 @@ button, input {
 
 .text-green {
   color: #54e69d;
+}
+
+.text-greener {
+  color: #3AA73A !important;
 }
 
 .text-green:hover {
@@ -299,7 +317,7 @@ button, input {
 }
 
 .no-padding {
-  padding: 0 !important;
+  padding: 0 0 !important;
 }
 
 .no-padding-bottom {
@@ -419,6 +437,7 @@ nav.side-navbar span.heading {
 
 nav.side-navbar ul {
   padding: 15px 0;
+  padding-bottom: 25px;
 }
 
 nav.side-navbar ul a {
@@ -867,7 +886,7 @@ section.dashboard-counts .number strong {
 }
 
 section.dashboard-counts .row {
-  padding: 30px 15px;
+  padding: 10px 15px;
   margin: 0;
 }
 
@@ -961,6 +980,7 @@ section.dashboard-counts div[class*='col-']:last-of-type .item {
 
 .chart .bar-chart canvas {
   padding: 15px;
+  height: 130px !important;
   width: 100%;
   margin: 0;
 }

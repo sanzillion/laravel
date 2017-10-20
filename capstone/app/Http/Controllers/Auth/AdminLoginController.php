@@ -43,7 +43,7 @@ class AdminLoginController extends Controller
             ])->withInput($request->only('email', 'remember'));
         }
 
-        session(['menu' => 'active']);
+        session(['menu' => 'active', 'appStatus' => 'undefined']);
 
         if($admin->isMaster()){
             return redirect()->route('admin.master');

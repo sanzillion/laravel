@@ -19,6 +19,7 @@ class AdminController extends Controller
 
         //set page for active sidebar
         session(['page' => 'admin']);
+        // dd(session()->all());
 
     	return view('admin.admin', compact(['pendings']));
     }

@@ -47,16 +47,16 @@
             <h2><i class="fa fa-mobile"></i> &nbsp Text Msg Form
             </h2>
 
-              <form action="#" class="pad-top">
-                
+              <form action="/send/create" method="POST" class="pad-top">
+                {{ csrf_field() }}
                   <div class="form-group">
                     <label for="num">Number : </label>
-                    <input name="num" type="text" placeholder="Ex. 639074239579" class="form-control form-control-sm">
+                    <input name="num" type="text" placeholder="Ex. 639074239579" class="form-control form-control-sm" required>
                   </div>
 
                   <div class="form-group">
                     <label for="body">Body Text : </label>
-                    <textarea name="body" id="body" cols="20" rows="5" class="form-control form-control-sm" maxlength="130">
+                    <textarea name="body" id="body" rows="5" class="form-control form-control-sm" maxlength="130" required>
                     </textarea>
                   </div>
 
@@ -142,7 +142,7 @@
     </div>
 
 
-    <div class="card">
+    <div class="card" id="app">
     
       <div class="container-fluid no-margin">
         <div class="row pad-top">
@@ -193,7 +193,7 @@
 
     <div class="text-center">
       <button type="submit" class="btn btn-info">Update</button>
-      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+      <button type="button" class="btn btn-secondary no" data-dismiss="modal">Cancel</button>
     </div>
       <hr>
     </form>
@@ -203,81 +203,10 @@
     @endslot
   @endcomponent
 
-  @component('layouts.dashboard.modal')
-    @slot ('id')
-      uploadFile
-    @endslot
-
-    @slot ('title')
-      <div class="text-info post-user">
-        <i class="fa fa-cloud-upload"></i> &nbsp File Upload
-      </div>
-    @endslot
-
-    @slot ('modalBody') 
-    <form action="/file/create" method="POST" enctype="multipart/form-data" id="upload">
-      <input type="hidden" name="_token" value="{{ csrf_token() }}">
-      <div class="row">
-        <div class="col-md-10 offset-md-1">
-          <div class="row">
-          <div class="col-md-6">
-            <input type="file" name="file[]" multiple="true" class="form-control form-control-sm">
-          </div>
-
-          <div class="col-md-6">
-            <select name="folders" id="folders" class="custom-select folders">
-              
-            </select>
-          </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="text-center pad-top">
-        <button type="submit" class="btn btn-info">Upload</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-
-    </form>
-    @endslot
-
-    @slot ('modalFooter')
-    @endslot
-  @endcomponent
-
-  @component('layouts.dashboard.sm-modal')
-    @slot ('id')
-      deleteFolder
-    @endslot
-
-    @slot ('title')
-      <i class="fa fa-asterisk text-danger"></i> Proceed with caution!
-      Do you want to delete ALL Folders? Are you sure?
-    @endslot
-
-    @slot ('modalBody') 
-    <div class="row">
-        <div class="col-md-12 col-sm-12">
-          <form action="/folder/deleteAll" method="POST">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <button class="btn btn-danger" type="submit">Yes</button>
-            <button type="button" class="btn btn-secondary no" data-dismiss="modal">No</button>
-          </form>
-          {{-- {{ Form::open(['action' => ['UserController@destruction', ''], 'method' => 'POST']) }} --}}
-            {{-- {{ Form::button('Yes', ['type' => 'submit', 'class' => 'btn btn-danger']) }} --}}
-          {{-- {{ Form::close() }} --}}
-        </div>
-      </div>
-    @endslot
-
-    @slot ('modalFooter')
-    @endslot
-  @endcomponent
-
-
 @endsection
 
 @section ('scripts')
+  <script src="{{ asset('js/app.js') }}"></script>
   <script src="{{ asset('js/master.js') }}"></script>
   <script src="{{ asset('js/admin/sms.js') }}"></script>
 @endsection

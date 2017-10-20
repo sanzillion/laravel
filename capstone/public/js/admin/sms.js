@@ -12,17 +12,18 @@ $(document).ready(function(){
                success:function(data){
                	console.log(data.body);
                	  	$('#method').val('PUT');
-					$('#bodyEdit').show().text(data.body);
-					$('.title').html("<i class='fa fa-edit'></i> &nbsp"+data.recipient);
-					$('#smsForm').attr("action", "/sms/"+id+"/update");
-					$('#smsForm .btn-info').text('Update');
-					$('#editSms').modal('show');
+          					$('#bodyEdit').show().text(data.body);
+          					$('.title').html("<i class='fa fa-edit'></i> &nbsp"+data.recipient);
+          					$('#smsForm').attr("action", "/sms/"+id+"/update");
+          					$('#smsForm .btn-info').text('Update');
+          					$('#editSms').modal('show');
                }
           });
      }
   });
 
   $('.sendSms').on("click", function (){
+    $(this).html("<i class='fa fa-spinner'></i>&nbsp wait")
   	var id = $(this).val();
   	if(id != ''){
   		$.ajax({
@@ -43,6 +44,10 @@ $(document).ready(function(){
 
   $('#smsForm .btn-info').click(function(){
     $(this).html('<i class="fa fa-spinner"></i>');
-  })
+  });
+
+  $('.no').on("click", function(){
+    $('.sendSms').html('<i class="fa fa-paper-plane"></i>&nbsp Send');
+  });
   
 })

@@ -21,7 +21,7 @@ class ApiResponse
      */
     public function __construct()
     {
-        //
+        
     }
 
     /**

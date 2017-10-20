@@ -13,8 +13,11 @@
 	<div class="row incon">
 
 		<div class="col-md-12 col-sm-12">
-			<div class="card">
+			@include ('admin.statistics')
+		</div>
 
+		<div class="col-md-12 col-sm-12">
+			<div class="card">
 			<div class="container-fluid no-margin">
 				<div class="row pad-top">
 					<div class="col-md-12 col-sm-12">
@@ -291,6 +294,15 @@
 @endsection
 
 @section ('scripts')
+
+	<script>
+		var appStatus = 'not connected';
+	</script>
+	<script src="{{ asset('js/app.js') }}"></script>
 	<script src="{{ asset('js/master.js') }}"></script>
 	<script src="{{ asset('js/admin/admin.js') }}"></script>
+	<script src="{{ asset('js/dashboard/Chart.min.js') }}"></script>
+    <script src="{{ asset('js/dashboard/charts-home.js') }}"></script>
+	<script src="{{ asset('js/dashboard/charts-custom.js') }}"></script>
+
 @endsection

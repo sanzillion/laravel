@@ -1,10 +1,10 @@
     <!-- Javascript files-->
+    
     <script src="{{ asset('js/dashboard/jquery.min.js') }}"></script>
     <script src="{{ asset('js/dashboard/tether.min.js') }}"></script>
     <script src="{{ asset('js/dashboard/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/dashboard/jquery.cookie.js') }}"> </script>
     <script src="{{ asset('js/dashboard/jquery.validate.min.js') }}"></script>
-    {{-- <script src="{{ asset('js/dashboard/charts-home.js') }}"></script> --}}
     <script src="{{ asset('js/dashboard/front.js') }}"></script>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.-->
     <!---->

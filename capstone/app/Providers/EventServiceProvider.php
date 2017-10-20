@@ -16,6 +16,12 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\ApiResponse' => [
             'App\Listeners\TruncateSend',
         ],
+        'App\Events\MobileApp' => [
+            'App\Listeners\AppStatus'
+        ],
+        'App\Events\SosApp' => [
+            'App\Listeners\MsgStatus'
+        ],
     ];
 
     /**

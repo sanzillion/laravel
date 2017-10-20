@@ -1,5 +1,10 @@
+
 $(document).ready(function(){
 
+var stat = $('.stat');
+var staticon = $('.statIcon');
+
+appstatus();
 loadUsers();
 //USERS TABLE
 // the code below is rendering tables with pagination without 
@@ -152,4 +157,38 @@ loadUsers();
       back.addClass('btn-default');
     }
   }
+
+//-------------------------------------------------------------
+
+  function notconnected(){
+    // console.log("Mobile App Not Connected!");
+    stat.text('NOT CONNECTED');
+    stat.removeClass('text-greener').addClass('text-redder');
+    staticon.removeClass('bg-greener').addClass('bg-redder');
+  }
+
+  function appstatus(){
+    try{
+      if(appStatus == 'connected'){
+        // console.log(appStatus);
+        stat.text('CONNECTED');
+        stat.removeClass('text-redder').addClass('text-greener');
+        staticon.removeClass('bg-redder').addClass('bg-greener');
+      }
+      else{
+        // console.log(appStatus);
+        notconnected();
+      }
+    }
+    catch(e){
+      notconnected();
+    }
+  }
+
+  setInterval(function(){
+    // console.log("Checking connection");
+    appstatus();
+  }, 10000)
+
+//end of jquery
 })

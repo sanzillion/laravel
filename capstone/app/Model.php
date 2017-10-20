@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Support\Facades\Log;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
 class Model extends Eloquent
@@ -11,15 +12,15 @@ class Model extends Eloquent
     public static function boot()
     {
         static::creating(function ($model) {
-            return "fuck off";
+            Log::info('Creating');
         });
 
         static::updating(function ($model) {
-            return "updated";
+            Log::info('Updating');
         });
 
         static::deleting(function ($model) {
-            // bluh bluh
+            Log::info('Deleting');
         });
         
         parent::boot();

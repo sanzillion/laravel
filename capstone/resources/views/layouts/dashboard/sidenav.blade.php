@@ -28,7 +28,7 @@
     <li class="docs"> <a href="#"> <i class="fa fa-rocket"></i>Documentation</a></li>
     <hr>
     <span class="heading">Extras</span>
-    <li><a href="#dashvariants" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-cloud-download"></i>Downloadables </a>
+    <li style="margin-top: 20px;"><a href="#dashvariants" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-cloud-download"></i>Downloadables </a>
       <ul id="dashvariants" class="collapse list-unstyled">
         <li><a href="#"><i class="fa fa-file-word-o"></i> Docs</a></li>
         <li><a href="#"><i class="fa fa-database"></i> SQL Database</a></li>

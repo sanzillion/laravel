@@ -56,10 +56,10 @@
 			  <thead class="thead-inverse">
 			    <tr>
 			      <th class="text-center">#</th>
-			      <th>Activity</th>
 			      <th>User</th>
-			      <th>Date</th>
-			      <th>Time</th>
+			      <th>Action</th>
+			      <th>Description</th>
+			      <th>Stamp</th>
 			    </tr>
 			  </thead>
 			  <tbody>
