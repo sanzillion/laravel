@@ -2,6 +2,9 @@
 $(document).ready(function () {
 
     var stats;
+    var months = [];
+    var today = new Date();
+    var month = today.getMonth();
     'use strict';
     //-------------------------------------------------------------------------
     //calling statistics table through ajax
@@ -10,11 +13,23 @@ $(document).ready(function () {
         method: 'GET',
         success: function(stat){
           stats = stat;
+          barchart();
         }
     });
 
+    //get current month - 6
+    for(var x = 0; x < 7; x++){
+        if(x == 0){
+            (month > 5) ? months[x] = month - 6: months[x] = month;;
+        }
+        else{
+            months[x] = months[x-1] + 1;
+        }
+    }
+    console.log(months);
+
     function barchart(){
-    console.log(stats);
+        console.log(stats);
         // ------------------------------------------------------- //
         // Charts Gradients
         // ------------------------------------------------------ //
@@ -50,7 +65,15 @@ $(document).ready(function () {
                 },
             },
             data: {
-                labels: ["January", "February", "March", "April", "May", "June", "July"],
+                labels: [
+                    stats[months[0]].month,
+                    stats[months[1]].month,
+                    stats[months[2]].month,
+                    stats[months[3]].month,
+                    stats[months[4]].month,
+                    stats[months[5]].month,
+                    stats[months[6]].month
+                        ],
                 datasets: [
                     {
                         label: "Visitors",
@@ -82,7 +105,15 @@ $(document).ready(function () {
                             gradient1
                         ],
                         borderWidth: 1,
-                        data: [65, 59, 80, 81, 56, 55, 40],
+                        data: [
+                            stats[months[0]].visitor, 
+                            stats[months[1]].visitor, 
+                            stats[months[2]].visitor, 
+                            stats[months[3]].visitor, 
+                            stats[months[4]].visitor, 
+                            stats[months[5]].visitor, 
+                            stats[months[6]].visitor
+                        ],
                     },
                     {
                         label: "Members",
@@ -114,7 +145,15 @@ $(document).ready(function () {
                             gradient2
                         ],
                         borderWidth: 1,
-                        data: [35, 40, 60, 47, 88, 27, 30],
+                        data: [
+                           stats[months[0]].m_log,
+                           stats[months[1]].m_log,
+                           stats[months[2]].m_log,
+                           stats[months[3]].m_log,
+                           stats[months[4]].m_log,
+                           stats[months[5]].m_log,
+                           stats[months[6]].m_log,
+                        ],
                     }
                 ]
             }

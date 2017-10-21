@@ -112,3 +112,4 @@ Route::group(['middleware' => 'revalidate'], function(){
 });
 
 Route::get('/stat', 'StatController@get');
+Route::get('/stat/all', 'StatController@everything');

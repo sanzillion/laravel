@@ -1,4 +1,5 @@
 
+var res;
 $(document).ready(function(){
 
 var stat = $('.stat');
@@ -189,6 +190,46 @@ loadUsers();
     // console.log("Checking connection");
     appstatus();
   }, 10000)
+
+  //---------------------------------------------------
+  //------------------statistics-----------------------
+  //everything ready
+  //animations presentation
+  function add(a, b) {
+      return a + b;
+  }
+
+  $.ajax({
+    url: '/stat/all',
+    method: 'GET',
+    dataType: 'JSON',
+    success: function(r){
+      r.sms = r.sms.reduce(add, 0);
+      r.apply = r.apply.reduce(add, 0);
+      r.approve = r.approve.reduce(add, 0);
+      r.download = r.download.reduce(add, 0);
+      r.m_sms = r.m_sms.reduce(add, 0);
+      r.uptime = (r.uptime.reduce(add, 0)/12);
+      r.m_uptime = r.m_uptime.reduce(add, 0);
+      res = r;
+      console.log(r);
+    }
+  });
+
+  var memnum = $('.sosmember strong');
+  var test = 0;
+
+  var run = setInterval(function(){
+    memnum.text(test);
+    test++;
+    if(test > 25){
+      stop();
+    }
+  },20);
+
+  function stop(){
+    clearInterval(run);
+  }
 
 //end of jquery
 })

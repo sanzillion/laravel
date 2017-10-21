@@ -10,7 +10,7 @@
               <div role="progressbar" style="width: 50%; height: 4px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-violet"></div>
             </div>
           </div>
-          <div class="number"><strong>25</strong></div>
+          <div class="number sosmember"><strong>25</strong></div>
         </div>
       </div>
       <!-- Item -->
@@ -57,19 +57,17 @@
 <section class="dashboard-header">
   <div class="container-fluid">
     <div class="row">
-      <!-- Statistics -->
-      <div class="statistics col-lg-3 col-12 ">
-        <div class="statistic d-flex align-items-center bg-white has-shadow">
-          <div class="icon bg-red"><i class="fa fa-plus-circle"></i></div>
-          <div class="text"><strong>234</strong><br><small>Applications</small></div>
+      <div class="chart col-lg-3 col-12">
+        <!-- Numbers-->
+        <div id="app" class="statistic d-flex align-items-center bg-white has-shadow">
+          <div class="icon bg-redder statIcon"><i class="fa fa-line-chart"></i></div>
+          <div class="text"><strong>SOS App</strong><br><small class="text-redder stat">Not Connected</small></div>
         </div>
-        <div class="statistic d-flex align-items-center bg-white has-shadow">
-          <div class="icon bg-green"><i class="fa fa-check-circle"></i></div>
-          <div class="text"><strong>152</strong><br><small>Approved</small></div>
-        </div>
-        <div class="statistic d-flex align-items-center bg-white has-shadow">
-          <div class="icon bg-orange"><i class="fa fa-cloud-download"></i></div>
-          <div class="text"><strong>147</strong><br><small>Downloads</small></div>
+        <!-- Bar Chart   -->
+        <div class="bar-chart has-shadow bg-white">
+          <div class="title"><strong class="text-violet">95%</strong><br><small>Current Server Uptime</small></div>
+          {{-- <div class="title"><strong class="text-violet">95%</strong><br><small>Mobile App Request</small></div> --}}
+          <canvas id="barChartHome"></canvas>
         </div>
       </div>
       <!-- Line Chart            -->
@@ -85,17 +83,19 @@
           </div>
         </div>
       </div>
-      <div class="chart col-lg-3 col-12">
-        <!-- Bar Chart   -->
-        <div class="bar-chart has-shadow bg-white">
-          <div class="title"><strong class="text-violet">95%</strong><br><small>Current Server Uptime</small></div>
-          {{-- <div class="title"><strong class="text-violet">95%</strong><br><small>Mobile App Request</small></div> --}}
-          <canvas id="barChartHome"></canvas>
+      <!-- Statistics -->
+      <div class="statistics col-lg-3 col-12 ">
+        <div class="statistic d-flex align-items-center bg-white has-shadow">
+          <div class="icon bg-red"><i class="fa fa-plus-circle"></i></div>
+          <div class="text"><strong>234</strong><br><small>Applications</small></div>
         </div>
-        <!-- Numbers-->
-        <div id="app" class="statistic d-flex align-items-center bg-white has-shadow">
-          <div class="icon bg-redder statIcon"><i class="fa fa-line-chart"></i></div>
-          <div class="text"><strong>SOS App</strong><br><small class="text-redder stat">Not Connected</small></div>
+        <div class="statistic d-flex align-items-center bg-white has-shadow">
+          <div class="icon bg-green"><i class="fa fa-check-circle"></i></div>
+          <div class="text"><strong>152</strong><br><small>Approved</small></div>
+        </div>
+        <div class="statistic d-flex align-items-center bg-white has-shadow">
+          <div class="icon bg-orange"><i class="fa fa-cloud-download"></i></div>
+          <div class="text"><strong>147</strong><br><small>Downloads</small></div>
         </div>
       </div>
     </div>

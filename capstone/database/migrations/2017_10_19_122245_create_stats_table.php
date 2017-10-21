@@ -22,6 +22,7 @@ class CreateStatsTable extends Migration
             $table->integer('apply');
             $table->integer('approve');
             $table->integer('download');
+            $table->integer('sms');
             $table->integer('uptime');
             // $table->timestamps();
         });
