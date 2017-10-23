@@ -74,7 +74,7 @@
                   <h3 class="h5">Zak Zailon</h3><span>Sent You Message</span>
                 </div></a></li>
             <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-                <div class="msg-profile"> <img src="{{ asset('images/me1.jpg') }}" alt="..." class="img-fluid rounded-circle"></div>
+                <div class="msg-profile"> <img src="{{ asset('images/wasme.jpg') }}" alt="..." class="img-fluid rounded-circle"></div>
                 <div class="msg-body">
                   <h3 class="h5">Aljon Khuzan</h3><span>Sent You Message</span>
                 </div></a></li>

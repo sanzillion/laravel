@@ -206,7 +206,7 @@ h1 {
 }
 
 .bg-faded {
-  background: rgba(241, 241, 241, 0.07);
+  background: rgba(72, 100, 74, 0.26);
  /* background-color: rgba(142, 0, 0, 0.72);*/
 }
 
@@ -280,10 +280,10 @@ hr.divider {
   background-image: url('../../images/header.jpg');
 }
 .bg-members{
-  background-image: url('../../images/header.jpg');
+  background-image: url('../../images/img/pic8.png');
 }
 .bg-stories{
-  background-image: url('../../images/educationz.jpg');
+  background-image: url('../../images/img/pic9.png');
 }
 
 #about,
@@ -506,4 +506,8 @@ input:valid + .label-material {
 .btn-edit:hover{
   background-color: #33c3ec;
   color: white;
+}
+
+.padtop{
+  padding-top: 20px;
 }

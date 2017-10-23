@@ -23,8 +23,8 @@
           <img class="img-fluid" src="{{ asset('images/jp.png') }}" alt="">
         </div>
         <div class="col-md-4">
-          <div class="intro text-justify">
-            <p>A requirement for the completion of the subject IT42, A Capstone Project from the BS in Information Technology Students (College of Information and Communications Technology) from St. John Paull II College of Davao</p>
+          <div class="intro text-justify padtop">
+            <p>A Capstone Project from the Information Technology Students (College of Information and Communications Technology) from St. John Paull II College of Davao</p>
           </div>
         </div>
         <div class="col-md-4">
@@ -67,9 +67,10 @@
             <h4><span>Sandru</span> Valle</h4>
           </a>  
           <ul>
-            <li><a href="#" target="_blank"><i class="fa fa-dribbble"></i></a></li>
-            <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"  target="_blank"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="https:\\sanzillion.github.io" target="_blank"><i class="fa fa-github"></i></a></li>
+            <li><a href="https:\\twitter.com\sanzillion" target="_blank"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https:\\sanzillion.wordpress.com" target="_blank"><i class="fa fa-wordpress"></i></a></li>
+            <li><a href="https:\\facebook.com\sanzillion"  target="_blank"><i class="fa fa-facebook"></i></a></li>
           </ul>
         </div>
         

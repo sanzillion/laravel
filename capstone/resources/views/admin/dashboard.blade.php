@@ -82,7 +82,7 @@
               </div>
               <!-- Bar Chart   -->
               <div class="bar-chart has-shadow bg-white">
-                <div class="title"><strong class="text-violet uptime">95%</strong><br><small>Current Server Uptime</small></div>
+                <div class="title"><strong class="text-violet uptime">0%</strong><br><small>Current Server Uptime</small></div>
                 {{-- <div class="title"><strong class="text-violet">95%</strong><br><small>Mobile App Request</small></div> --}}
                 <canvas id="barChartHome"></canvas>
               </div>

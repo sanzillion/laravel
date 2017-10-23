@@ -197,7 +197,7 @@ loadUsers();
   //animations presentation
 
   function add(a, b) {
-      return a + b;
+      return a + parseInt(b);
   }
 
   $.ajax({

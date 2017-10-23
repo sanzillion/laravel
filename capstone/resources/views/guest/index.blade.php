@@ -11,17 +11,17 @@
           </ol>
           <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
-              <img class="d-block img-fluid w-100" src=" {{ asset('images/happyskwela.png') }} " alt="">
+              <img class="d-block img-fluid w-100" src=" {{ asset('images/img/pic1.png') }} " alt="">
               <div class="carousel-caption d-none d-md-block">
               </div>
             </div>
             <div class="carousel-item">
-              <img class="d-block img-fluid w-100" src=" {{ asset('images/sos.png') }} " alt="">
+              <img class="d-block img-fluid w-100" src=" {{ asset('images/img/pic2.png') }} " alt="">
               <div class="carousel-caption d-none d-md-block">
               </div>
             </div>
             <div class="carousel-item">
-              <img class="d-block img-fluid w-100" src=" {{ asset('images/bg-rius1.jpg') }} " alt="">
+              <img class="d-block img-fluid w-100" src=" {{ asset('images/img/pic3.png') }} " alt="">
               <div class="carousel-caption d-none d-md-block">
               </div>
             </div>
@@ -54,25 +54,25 @@
 
           <div class="col-md-3 col-sm-3 featured-block-rounded">
             <a href="#"><figure>
-            <img src="{{ asset('images/Edwin2.jpg') }}" class="img-fluid" alt="">
+            <img src="{{ asset('images/img/1.jpg') }}" class="img-fluid" alt="">
             </figure></a> <h5></h5>
             <div class="featured-block-equal-cont"><p></p></div>
           </div>
           <div class="col-md-3 col-sm-3 featured-block-rounded">
             <a href="#"><figure>
-            <img src="{{ asset('images/deped-piket.jpg') }}" alt="" class="img-fluid">
+            <img src="{{ asset('images/img/circle2.png') }}" alt="" class="img-fluid">
             </figure></a> <h5></h5>
             <div class="featured-block-equal-cont"><p></p></div>
           </div>
           <div class="col-md-3 col-sm-3 featured-block-rounded">
             <a href="#"><figure>
-            <img src="{{ asset('images/lemlun6.jpg') }}" alt="" class="img-fluid">
+            <img src="{{ asset('images/img/circle3.png') }}" alt="" class="img-fluid">
             </figure></a> <h5></h5>
             <div class="featured-block-equal-cont"><p></p></div>
           </div>
           <div class="col-md-3 col-sm-3 featured-block-rounded">
             <a href="#"><figure>
-            <img src="{{ asset('images/orig.jpg') }}" class="img-fluid" alt="">
+            <img src="{{ asset('images/img/circle4.png') }}" class="img-fluid" alt="">
             </figure></a> <h5></h5>
             <div class="featured-block-equal-cont"><p></p></div>
           </div>

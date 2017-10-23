@@ -51,7 +51,7 @@ button {
   height: auto;
   opacity: 1;
   transform: translateY(-6em);
-  padding-top: 10em;
+  padding-top: 12em;
 }
 .profile--open .profile__fields {
   opacity: 1;
@@ -63,7 +63,7 @@ button {
 }
 .profile__form {
   position: relative;
-  background: url('../../images/greenboard.jpg');
+  background: url('../../images/greenboard1.jpg');
   visibility: hidden;
   opacity: 0;
   height: 0;
@@ -116,7 +116,7 @@ button {
   height: 2rem;
   line-height: 2rem;
   bottom: 0;
-  color: #999;
+  color: white;
   transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .input {
