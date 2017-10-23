@@ -16,6 +16,8 @@
 }
 
 .error-report{
+  border: 1px solid white;
+  border-radius: 5px;
 	font-size: 0.8em;
 	position: fixed;
 	top: 30px;
@@ -35,7 +37,7 @@
   color: white;
 	position: fixed;
 	top: 30px;
-	left: 40%;
+	left: 45%;
 	z-index: 9999;
 }
 

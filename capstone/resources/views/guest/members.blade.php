@@ -198,11 +198,3 @@
     </div>
 
 @endsection
-
-@section ('scripts')
-  <script>
-    $(document).ready(function(){
-        $('.bg-members').css('background-image', 'url({{ asset('images/kid.jpg') }})');
-    });
-  </script>
-@endsection

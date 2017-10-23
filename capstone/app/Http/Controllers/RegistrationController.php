@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Application;
 use App\Mail\WelcomeAgain;
+use App\Events\Stats;
 
 class RegistrationController extends Controller
 {
@@ -41,9 +42,8 @@ class RegistrationController extends Controller
      */
     public function store(Application $pending)
     {
-
+        event(new Stats('approve'));
         // dd($pending->phone_number);
-
         $user = User::create([
             'name' => $pending->name,
             'email' => $pending->email,

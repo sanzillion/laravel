@@ -22,6 +22,9 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\SosApp' => [
             'App\Listeners\MsgStatus'
         ],
+        'App\Events\Stats' => [
+            'App\Listeners\UpdateStat'
+        ],
     ];
 
     /**

@@ -20,9 +20,6 @@
         }
 
         if(x || error){
-          if(x){
-            $('#flash-message').css('left', '45%');
-          }
           fadeAway();
         }
 

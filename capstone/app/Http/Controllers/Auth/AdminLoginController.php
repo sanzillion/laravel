@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Events\Stats;
 use Auth;
 use App\Admin;
 
@@ -44,6 +45,7 @@ class AdminLoginController extends Controller
         }
 
         session(['menu' => 'active', 'appStatus' => 'undefined']);
+        event(new Stats('a_log'));
 
         if($admin->isMaster()){
             return redirect()->route('admin.master');

@@ -12,15 +12,15 @@ class Model extends Eloquent
     public static function boot()
     {
         static::creating(function ($model) {
-            Log::info('Creating');
+            Log::info('Created');
         });
 
         static::updating(function ($model) {
-            Log::info('Updating');
+            Log::info('Updated');
         });
 
         static::deleting(function ($model) {
-            Log::info('Deleting');
+            Log::info('Deleted');
         });
         
         parent::boot();

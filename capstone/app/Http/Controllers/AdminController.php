@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Application;
 use App\User;
 use App\Admin;
+use Carbon\Carbon;
 use Auth;
 
 class AdminController extends Controller
@@ -15,16 +16,23 @@ class AdminController extends Controller
     }
 
     public function index(){
-        $pendings = Application::simplePaginate(5);
-
-        //set page for active sidebar
+        
+        $month = date("M");
         session(['page' => 'admin']);
-        // dd(session()->all());
 
-    	return view('admin.admin', compact(['pendings']));
+    	return view('admin.dashboard', compact(['month']));
+    }
+
+    public function users(){
+        //set page for active sidebar
+        $pendings = Application::simplePaginate(5);
+        session(['page' => 'admin']);
+
+        return view('admin.users', compact(['pendings']));
     }
 
     public function getUsers(){
+
         $users = User::paginate(10);
         return $users;
     }

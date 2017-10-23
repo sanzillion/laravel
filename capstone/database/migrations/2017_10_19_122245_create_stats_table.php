@@ -24,7 +24,7 @@ class CreateStatsTable extends Migration
             $table->integer('download');
             $table->integer('sms');
             $table->integer('uptime');
-            // $table->timestamps();
+            $table->timestamps();
         });
     }
 

@@ -79,11 +79,3 @@
     </div>
 
 @endsection
-
-@section ('scripts')
-  <script>
-    $(document).ready(function(){
-        $('.bg-about').css('background-image', 'url({{ asset('images/header.jpg') }})');
-    });
-  </script>
-@endsection

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Application;
 use App\Http\Requests\RegistrationRequest;
+use App\Events\Stats;
 
 class PendingUserController extends Controller
 {
@@ -41,6 +42,15 @@ class PendingUserController extends Controller
      */
     public function store(RegistrationRequest $form)
     {
+
+        $this->validate(request(), [
+            'name' => 'required|unique:users,name', 
+            'email' => 'required|email|unique:pending_users|unique:users',
+            'institution' => 'required',
+            'phone_number' => 'required|numeric|min:12',
+            'city' => 'required'
+        ]);
+
         $user = Application::create([
             'name' => request()->name,
             'email' => request()->email,
@@ -50,6 +60,8 @@ class PendingUserController extends Controller
             'city' => request()->city,
         ]);
 
+        event(new Stats('apply'));
+        
         session()->flash('message', 'Please wait for Admin approval! We will be sending you an email.');
 
         return redirect()->home();

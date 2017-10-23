@@ -15,6 +15,10 @@
 		@include ('layouts.landing.nav')
 		@yield ('content')
 
+		@if(!Auth::guard('web')->check())
+			@include ('layouts.landing.login')
+		@endif
+
 		@include ('layouts.landing.footer')
 
 		@include ('layouts.landing.scripts')

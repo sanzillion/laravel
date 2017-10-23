@@ -26,10 +26,10 @@ $(document).ready(function () {
             months[x] = months[x-1] + 1;
         }
     }
-    console.log(months);
+    // console.log(months);
 
     function barchart(){
-        console.log(stats);
+        // console.log(stats);
         // ------------------------------------------------------- //
         // Charts Gradients
         // ------------------------------------------------------ //

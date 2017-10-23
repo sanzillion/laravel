@@ -3,28 +3,37 @@
 @section ('extrahead')
 	<head>
 		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-		<link href="{{ asset('css/landing/bootstrap.css') }}" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="{{ asset('css/landing/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/landing/style.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ asset('css/landing/devs.css') }}">
 	</head>
 @endsection
 
 @section ('content')
-<div class="bg bg-developer"></div>
-    <div class="wrapper">
+<div class="wrapper">
           <div class="p-4 my-4" id="developer">
             <div class="container">
                 <!-- SPEAKERS SECTION --> 
   <section id="speakers">
-    <h3 style="font-family: impact">Web Devs</h3> <!-- Section Title -->
+    <h3>THE DEV TEAM</h3> <!-- Section Title -->
     <div class="separator"></div>
     <div class="container">
-      <div class="col-md-8 col-md-offset-2">
+      <div class="row">
         <!-- Section Description -->
-        <p> <br></p>
+        <div class="col-md-4">
+          <img class="img-fluid" src="{{ asset('images/jp.png') }}" alt="">
+        </div>
+        <div class="col-md-4">
+          <div class="intro text-justify">
+            <p>A requirement for the completion of the subject IT42, A Capstone Project from the BS in Information Technology Students (College of Information and Communications Technology) from St. John Paull II College of Davao</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <img class="img-fluid" src="{{ asset('images/ict.png') }}" alt="">
+        </div>        
       </div>
       
       <!-- First Row of Speakers -->
-      <div class="row1">
+      <div class="row">
       
         <!-- Speaker 1 -->
         <div class="col-md-3">
@@ -40,7 +49,7 @@
           </a>  
           <ul>
             <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"  target="_blank"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
             <li><a href="#" target="_blank"><i class="fa fa-foursquare"></i></a></li>           
           </ul>
         </div>
@@ -104,17 +113,9 @@
         </div>
         
       </div> <!-- End First Row -->
-    </div>
-  	</div>
-   	</div>
+            </div>
+          </div>
+   </div>
         <!-- /.wrapper -->
     </div>
-@endsection
-
-@section ('scripts')
-	<script>
-	    $(document).ready(function(){
-	        $('.bg-developer').css('background-image', 'url({{ asset('images/manobo.jpg') }})');
-	    });
-	</script>
 @endsection

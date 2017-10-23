@@ -35,6 +35,18 @@ class TestController extends Controller
         return view('guest.devs');
     }
 
+    public function stories()
+    {
+        session(['page' => 'stories']);
+        return view('guest.stories');
+    }
+
+    public function register()
+    {
+        session(['page' => 'register']);
+        return view('guest.register');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -4,7 +4,7 @@
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Search Posts..">
             <div class="input-group-btn">
-              <button class="btn btn-default" type="submit">
+              <button class="btn btn-sanz" type="submit">
                 <i class="fa fa-search"></i>
               </button>
             </div>
@@ -17,7 +17,7 @@
           <hr>
           <h5><b>RECENT POSTS</b></h5>
           <hr class="style2">
-          <p class="con-p">NIGGA NIGGA NIGGA</p>
+          <p class="con-p"></p>
           <div class="sidebar-module">
           <hr>
             <h4>Archives</h4>
@@ -46,8 +46,8 @@
           <div class="sidebar-module">
             <h4>Connect with us:</h4>
             <ol class="list-unstyled ">
-              <li><a class="text-green" href="#"><i class="fa fa-twitter "></i> Twitter</a></li>
-              <li><a class="text-green" href="#"><i class="fa fa-facebook-square"></i> Facebook</a></li>
-              <li><a class="text-green" href="#"><i class="fa fa-wordpress"></i> Wordpress</a></li>
+              <li><a href="#"><i class="fa fa-twitter "></i> Twitter</a></li>
+              <li><a href="#"><i class="fa fa-facebook-square"></i> Facebook</a></li>
+              <li><a href="#"><i class="fa fa-wordpress"></i> Wordpress</a></li>
             </ol>
           </div> 

@@ -10,6 +10,7 @@ use App\Sms;
 use App\Send;
 use App\User;
 use App\Admin;
+use App\Events\Stats;
 
 class SendController extends Controller
 {
@@ -62,6 +63,7 @@ class SendController extends Controller
 			return "Unauthorize!";
 		}
 		else{
+			event(new Stats('sms'));
 
 			$sms = Send::all();
 

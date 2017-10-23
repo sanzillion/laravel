@@ -30,6 +30,10 @@ class AppServiceProvider extends ServiceProvider
 
             $view->with('url', $url);
         });
+
+        view()->composer('layouts.landing.nav', function(){
+            
+        });
     }
 
     /**

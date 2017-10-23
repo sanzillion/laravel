@@ -1,8 +1,8 @@
 <!-- Bootstrap core JavaScript -->
 <script src="{{ asset('js/landing/jquery/jquery.min.js') }}"></script>
-<script src="{{ asset('js/landing/jquery/myjquery.js') }}"></script>
 <script src="{{ asset('js/landing/popper/popper.min.js') }}"></script>
 <script src="{{ asset('js/landing/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/landing/jquery/myjquery.js') }}"></script>
 
 <script>
 	@if(session('page'))
@@ -11,9 +11,9 @@
 		@endphp
 	@endif
 
-	$(document).ready(function(){
-		$('.sidebar li').removeClass('active');
-	  	$('.'+session).addClass('active');
-	})
-
+	document.getElementById('toggleProfile').addEventListener('click', function () {
+	  [].map.call(document.querySelectorAll('.profile'), function(el) {
+	    el.classList.toggle('profile--open');
+	  });
+	});
 </script>

@@ -93,7 +93,7 @@ class UserController extends Controller
         $user->update();
 
         session()->flash('message', 'User updated!');
-        return redirect('/admin');
+        return redirect()->back();
     }
 
     /**
@@ -105,13 +105,17 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         // $user->posts->delete();
-        $user->delete();
         foreach($user->posts as $post){
             $post->delete();
         }
 
+        foreach($user->entry as $pending_post){
+            $pending_post->delete();
+        }
+        
+        $user->delete();
         session()->flash('message', 'User has been deleted!');
-        return redirect('/admin');
+        return redirect()->back();
     }
 
     public function search($string){
@@ -132,6 +136,6 @@ class UserController extends Controller
         Entry::truncate();
 
         session()->flash('message', 'Deleted Successfully!');
-        return redirect('/admin');
+        return redirect()->back();
     }
 }

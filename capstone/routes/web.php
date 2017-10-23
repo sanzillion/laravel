@@ -10,8 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'TestController@index')->name('home');
+Route::get('/about', 'TestController@about');
+Route::get('/members', 'TestController@members');
+Route::get('/developers', 'TestController@devs');
+Route::get('/stories', 'PostsController@index');
+Route::get('/register', 'TestController@register');
 
-Route::get('/', 'PostsController@index')->name('home');
+// Route::get('/', 'PostsController@index')->name('home');
 Route::get('/home', 'PostsController@index');
 
 Route::get('/posts/create', 'PostsController@create');
@@ -24,6 +30,7 @@ Route::delete('/posts/{post}', 'PostsController@destroy');
 Route::get('/posts/tags/{tag}', 'TagsController@index');
 
 Route::post('/posts/{post}/comments/{user}', 'CommentsController@store');
+Route::delete('/comments/{comment}/delete', 'CommentsController@destroy');
 Route::put('/comments/{comment}', 'CommentsController@update');
 Route::get('/comments/{comment}', 'CommentsController@edit');
 
@@ -47,6 +54,7 @@ Route::get('/passowrd/reset/{token}', 'Auth\ResetPasswordController@showResetFor
 Route::group(['middleware' => 'revalidate'], function(){
 
 	Route::get('/admin', 'AdminController@index')->name('admin.dashboard');
+	Route::get('/admin/manage', 'AdminController@users');
 
 	Route::get('/master', 'AdminController@master')->name('admin.master');
 	Route::put('/master/{admin}', 'AdminController@update');
@@ -75,7 +83,6 @@ Route::group(['middleware' => 'revalidate'], function(){
 	Route::get('/blog/{post}', 'BlogController@show');
 	Route::post('/blog/deleteAll', 'BlogController@deleteAll');
 
-
 	Route::get('/register/{pending}', 'RegistrationController@store');
 	Route::delete('/pendinguser/{pending}', 'PendingUserController@destroy');
 
@@ -94,9 +101,6 @@ Route::group(['middleware' => 'revalidate'], function(){
 	Route::get('/container/all', 'FolderController@allFolders');
 	Route::delete('/container/{folder}/delete', 'FolderController@destroy');
 
-	//download any file from directory
-	Route::get('/download/{file}', 'DownloadsController@download');
-
 	Route::get('/sms', 'SmsController@index');
 	Route::get('/sms/{sms}/edit', 'SmsController@edit');
 	Route::put('/sms/{sms}/update', 'SmsController@update');
@@ -104,12 +108,10 @@ Route::group(['middleware' => 'revalidate'], function(){
 	Route::post('/send/create', 'SendController@create');
 	Route::get('/get/{code}', 'SendController@get');
 
-	Route::get('/test', 'TestController@index');
-	Route::get('/test/about', 'TestController@about');
-	Route::get('/test/members', 'TestController@members');
-	Route::get('/test/developers', 'TestController@devs');
-	
 });
+
+//download any file from directory
+Route::get('/download/{file}', 'DownloadsController@download');
 
 Route::get('/stat', 'StatController@get');
 Route::get('/stat/all', 'StatController@everything');

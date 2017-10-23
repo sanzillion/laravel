@@ -95,8 +95,16 @@ class CommentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comment $comment)
     {
-        //
+        
+        if($comment->delete()){
+            session()->flash('message', 'Your comment has been deleted!');
+        }
+        else{
+            session()->flash('message', 'Something went wrong!');
+        }
+
+        return redirect()->back();
     }
 }

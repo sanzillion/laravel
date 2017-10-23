@@ -12,7 +12,7 @@ $(document).ready(function () {
         method: 'GET',
         success: function(stat){
           stats = stat;
-          console.log(stats);
+          // console.log(stats);
           barchart();
         }
     });

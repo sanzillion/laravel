@@ -15,7 +15,134 @@ body {/*
   background-size: cover;
   -o-background-size: cover;*/
   font-family: 'Montserrat', sans-serif;
-  background: #f0f0f0;
+  /*background: #f0f0f0;*/
+  background: url('../../images/greenboard1.jpg');
+}
+
+.comments a{
+  font-size: .7em;
+}
+
+.comments p{
+  font-size: .7em;
+}
+
+.commentsection{
+  font-size: .7em;
+  height: 70px;
+}
+
+.commentbody{
+  height: 100px;
+  width: 100%;
+  font-size: .8em;
+}
+
+.comfoot{
+  font-size: .7em;
+}
+
+.btn-comment:hover{
+  background-color: rgb(84, 115, 93) !important;
+}
+
+.editComment{
+  cursor: pointer;
+  color: #0486ab !important;
+}
+
+.editComment:hover{
+  color: rgb(84, 115, 93) !important;
+}
+
+.list-group-item{
+  margin-bottom: 10px;
+}
+
+.no-padding{
+  padding: 0px 0px !important;
+}
+
+.error-report{
+  border: 1px solid white;
+  border-radius: 5px;
+  font-size: 0.8em;
+  position: fixed;
+  top: 20;
+  left: 20;
+  z-index: 9999;
+  background-color: #d95350 !important;
+  color: white;
+}
+
+.error-report h4{
+  font-weight: bold;
+  padding-left: 10px;
+  font-size: 1.5em;
+  margin-top: 5px;
+}
+
+.error-report ul{
+  padding: 0 10px !important;
+  margin-bottom: 0px;
+}
+
+.error-report div{
+  padding: 10px 20px;
+  margin-bottom: 0px;
+}
+
+#flash-message {
+  background-color: #27b585;
+  color: white;
+  position: fixed;
+  bottom: 20px;
+  left: 20px !important;
+  z-index: 9999;
+}
+
+.sidebar-module-inset{
+  font-size: .9em;
+}
+
+.blurr{
+  color: #959595;
+}
+
+.card-header{
+  padding-top: 20px;
+}
+
+.card-body{
+  color: #5e5e5e;
+}
+
+.card-body p{
+  font-size: .9em;
+}
+
+a{
+  color: #5d0101;
+  text-decoration: none !important;
+}
+
+.pagination li{
+  margin-right: 10px;
+  margin-right: 10px;
+}
+
+.blog-post-meta{
+  font-size: .8em;
+  margin-bottom: 0px !important;
+}
+
+a:hover{
+  color: #004810;
+}
+
+.margin-v{
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .pad-top{
@@ -28,11 +155,11 @@ body {/*
 
 h1, h2, h3, h4, h5, h6, .text-heading {
   font-family: 'Montserrat', sans-serif;
-  color: #ab2b2b;
+  
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 1.5rem;
 }
 
 .text-black{
@@ -44,20 +171,26 @@ h1 {
 }
 
 .navbar-light .navbar-brand{
-  color: #8e4e4e !important;
+  color: #ffffff !important;
 }
 
 .tagline-upper {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Permanent Marker', cursive;
   font-size: 3rem;
-  font-weight: 700;
   line-height: 1;
+  color: #fff;
 }
 
 .tagline-lower {
-  font-family: 'Montserrat', sans-serif;
+  font-family: courier;
   font-size: 1.2rem;
   line-height: 1;
+  color: #fff;
+}
+
+.tagline-lower a{
+  cursor: text;
+  color: white;
 }
 
 .text-expanded {
@@ -73,7 +206,7 @@ h1 {
 }
 
 .bg-faded {
-  background: rgb(241, 241, 241);
+  background: rgba(241, 241, 241, 0.07);
  /* background-color: rgba(142, 0, 0, 0.72);*/
 }
 
@@ -111,6 +244,9 @@ hr.divider {
 .p-4{
   padding: 3rem !important;
 }
+.p-5{
+  padding: 3rem !important;
+}
 .a-4{
   background: rgb(255, 255, 255);
   padding: 4rem !important;
@@ -141,20 +277,15 @@ hr.divider {
   background-size: cover;
 }
 .bg-about{
-  background-image: url('../img/save.jpg');
+  background-image: url('../../images/header.jpg');
 }
 .bg-members{
+  background-image: url('../../images/header.jpg');
+}
+.bg-stories{
+  background-image: url('../../images/educationz.jpg');
+}
 
-}
-.bg-blog{
-  background-image: url('../img/manobo.jpg');
-}
-.bg-contact{
-  background-image: url('../img/NPhil1.jpeg');
-}
-.bg-developer{
-  
-}
 #about,
 #members,
 #blog,
@@ -207,7 +338,6 @@ hr.style2{
 }
 footer{
   color: #ffffff;
-  background-color: #333 !important;
 }
 /*our team css*/
 
@@ -221,6 +351,11 @@ footer{
   }
   .p-4{
     padding: 10rem !important;
+    padding-bottom: 30px !important;
+    padding-top: 30px !important;
+  }
+
+  .p-5{
     padding-bottom: 30px !important;
     padding-top: 30px !important;
   }
@@ -282,11 +417,93 @@ footer{
     border: 1px solid rgba(208, 206, 206, 0.61);
     padding: 20px;
   }
-  /* for our team*/
-  .row1{
-    margin-right: 100px;
-  }
-  #speakers p{
-    margin-right: 100px;
-  }
+  
+}
+
+.box{
+  background-color: #f8f9fa;
+  padding: 20px 30px;
+  margin: 10px 0;
+  border: 1px solid #dcd9d9;
+}
+
+.form-material{
+  position: relative !important;
+  margin-bottom: 2em !important;
+}
+
+.label-material {
+  position: absolute;
+  height: 2rem;
+  line-height: 2rem;
+  bottom: 0;
+  color: #999;
+  transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.input-material {
+  width: 100%;
+  font-size: 100%;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  height: 2rem;
+  line-height: 2rem;
+  border-bottom: 1px solid #eee;
+  transition: all .2s ease-in;
+}
+.input-material:focus {
+  outline: 0;
+  border-color: #ccc;
+}
+
+/* Using required and a faux pattern to see if input has text from http://stackoverflow.com/questions/16952526/detect-if-an-input-has-text-in-it-using-css */
+.input-material:focus + .label-material,
+input:valid + .label-material {
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  color: #ccc;
+}
+
+#registration-form{
+  padding: 20px 10px;
+}
+
+#registration-form label{
+  font-size: .8em;
+}
+
+.btn-sanz{
+  background-color: rgb(84, 115, 93) !important;
+  color: white;
+}
+
+.btn-sanz:hover{
+  background-color: rgb(80, 162, 104) !important;
+  color: white;
+}
+
+.showpostbox{
+  padding: 30px;
+}
+
+.btn-deletepost{
+  background-color: #5d0101;
+  font-style: none;
+  color: white;
+  font-size: .7em;
+}
+
+.btn-deletepost:hover{
+  background-color: #c31919;
+}
+
+.btn-edit{ 
+  background-color: #0486ab;
+  color: white;
+}
+
+.btn-edit:hover{
+  background-color: #33c3ec;
+  color: white;
 }

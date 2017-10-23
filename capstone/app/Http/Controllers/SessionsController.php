@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Events\Stats;
 
 class SessionsController extends Controller
 {
@@ -44,7 +45,7 @@ class SessionsController extends Controller
                 'message' => 'Please check your credentials and try again.'
             ]);
         }
-
+        event(new Stats('m_log'));
         return redirect()->home();
     }
 

@@ -109,7 +109,7 @@ evangelized areas of the world.”</p>
             <div class="col-md-4">
               <h5><b>RECENT POSTS</b></h5>
               <hr class="style2">
-              <p class="con-p">NIGGA NIGGA NIGGA</p>
+              <p class="con-p"></p>
           </div>
           </div>
           

@@ -33,7 +33,7 @@ $factory->define(App\Post::class, function (Faker $faker) {
     return [
         'user_id' => App\User::all()->random()->id,
         'title' => $faker->sentence,
-        'body' => $faker->paragraph,
+        'body' => $faker->paragraph."<br><br>".$faker->text(1000)."<br><br>".$faker->paragraph,
     ];
 });
 
@@ -56,7 +56,7 @@ $factory->define(App\Entry::class, function (Faker $faker) {
     return [
     	'user_id' => App\User::all()->random()->id,
         'title' => $faker->sentence,
-        'body' => $faker->paragraph,
+        'body' => $faker->paragraph."<br><br>".$faker->text(1000)."<br><br>".$faker->paragraph,
     ];
 });
 

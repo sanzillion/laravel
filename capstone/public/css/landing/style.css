@@ -16,15 +16,44 @@ a {text-decoration: none; color: #fff; transition: all 0.1s ease-in;}
 img {border: 0;}
 
 body {
-	background: #fff;
+	background: url('../../images/greenboard1.jpg');
+	/*background: #f0f0f0;*/
 	color: #fff;
-	font-family: 'PT Sans Narrow', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 13px;
 	font-weight: 300;
 }
 
 .clear {clear: both;}
+/* MIssing css in business-casual*/
+.bg-faded {
+  background: rgba(241, 241, 241, 0.07);
+ /* background-color: rgba(142, 0, 0, 0.72);*/
+}
 
+.text-shadow {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.tagline-upper {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 3rem;
+  line-height: 1;
+  color: #fff;
+}
+.tagline-lower {
+  font-family: courier;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: #fff;
+}
+ #developer {
+    background: rgba(255, 255, 255, 0.91);
+}
+
+.navbar-light .navbar-brand {
+    color: #ffffff !important;
+}
+/*END*/
 /* Buttons */
 .btn {
 	display: inline-block;
@@ -55,9 +84,9 @@ body {
 
 @font-face {
     font-family: 'norwester';
-	src: url('../fonts/norwester/norwester.eot');
-    src: url('../fonts/norwester/norwester.eot?iefix') format('embedded-opentype'),
-		 url('../fonts/norwester/norwester.ttf');
+	src: url('../../fonts/norwester/norwester.eot');
+    src: url('../../fonts/norwester/norwester.eot?iefix') format('embedded-opentype'),
+		 url('../../fonts/norwester/norwester.ttf');
     font-weight: normal;
 }
 
@@ -79,6 +108,7 @@ body {
 }
 
 #speakers h3 {
+	color: #ab2b2b;
 	padding: 0 0 15px;
 	font-family: 'norwester';
 	font-size: 36px;
@@ -86,6 +116,7 @@ body {
 }
 
 #speakers h4  {
+	color: #ab2b2b;
 	margin-top: -20px;
 	font-size: 32px;
 	font-weight: 700;
@@ -130,7 +161,9 @@ body {
 	border-radius: 0 16px 16px 0;
 	font-size: 16px;
 }
-
+footer {
+    color: #ffffff;
+}
 /* Member Image Hover Effect */
 .hover_img {
   display: none
@@ -170,4 +203,8 @@ body {
 
 	#speakers img {max-width: 300px;}
 
+}
+
+.intro p{
+	font-size: .9em !important;
 }

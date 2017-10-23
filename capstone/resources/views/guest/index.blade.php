@@ -11,7 +11,7 @@
           </ol>
           <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
-              <img class="d-block img-fluid w-100" src=" {{ asset('images/Rius-Valle.png') }} " alt="">
+              <img class="d-block img-fluid w-100" src=" {{ asset('images/happyskwela.png') }} " alt="">
               <div class="carousel-caption d-none d-md-block">
               </div>
             </div>
@@ -21,7 +21,7 @@
               </div>
             </div>
             <div class="carousel-item">
-              <img class="d-block img-fluid w-100" src=" {{ asset('images/happyskwela.png') }} " alt="">
+              <img class="d-block img-fluid w-100" src=" {{ asset('images/bg-rius1.jpg') }} " alt="">
               <div class="carousel-caption d-none d-md-block">
               </div>
             </div>

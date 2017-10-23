@@ -195,6 +195,7 @@ loadUsers();
   //------------------statistics-----------------------
   //everything ready
   //animations presentation
+
   function add(a, b) {
       return a + b;
   }
@@ -211,24 +212,111 @@ loadUsers();
       r.m_sms = r.m_sms.reduce(add, 0);
       r.uptime = (r.uptime.reduce(add, 0)/12);
       r.m_uptime = r.m_uptime.reduce(add, 0);
+      var full = parseInt(r.uptime * 2);
+      r.uptime = parseInt((r.m_uptime / full) * 100);
       res = r;
-      console.log(r);
+      // console.log(r);
+      animateNumbers();
     }
   });
 
-  var memnum = $('.sosmember strong');
-  var test = 0;
 
-  var run = setInterval(function(){
-    memnum.text(test);
-    test++;
-    if(test > 25){
-      stop();
-    }
-  },20);
+  var mem = $('.sosmember strong');
+  var sms = $('.smswork strong');
+  var blog = $('.blogposts strong');
+  var files = $('.filesdocs strong');
+  var apply = $('.apply strong');
+  var approve = $('.approve strong');
+  var download = $('.download strong');
+  var uptime = $('.uptime');
+  var memprog = $('.progress-bar');
+  var num = [0, 0, 0, 0, 0, 0, 0, 0];
+  var progress = [0, 0, 0, 0, 0, 0, 0, 0];
+  var run = {};
 
-  function stop(){
-    clearInterval(run);
+  function animateNumbers(){
+    $('.m_posts').text(res.m_blog);
+    $('.m_users').text(res.m_members);
+    $('.m_files').text(res.m_files);
+    $('.m_sms').text(res.m_sms);
+
+    run.mem = setInterval(function(){
+      mem.text(num[0]);
+      num[0]++;
+      if(num[0] > res.members){
+        stop("mem");
+      }
+    },20);
+
+    run.memprog = setInterval(function(){
+      memprog.css('width', progress[0]++);
+      progress[0]++;
+      if(progress[0] > 70){
+        stop("memprog");
+      }
+    },15);
+
+    run.sms = setInterval(function(){
+      sms.text(num[1]);
+      num[1]++;
+      if(num[1] > res.sms){
+        stop("sms");
+      }
+    },20);
+
+    run.blog = setInterval(function(){
+      blog.text(num[2]);
+      num[2]++;
+      if(num[2] > res.blog){
+        stop("blog");
+      }
+    },20);
+
+    run.files = setInterval(function(){
+      files.text(num[3]);
+      num[3]++;
+      if(num[3] > res.files){
+        stop("files");
+      }
+    },20);
+
+    run.apply = setInterval(function(){
+      apply.text(num[4]);
+      num[4]++;
+      if(num[4] > res.apply){
+        stop("apply");
+      }
+    },20);
+
+    run.approve = setInterval(function(){
+      approve.text(num[5]);
+      num[5]++;
+      if(num[5] > res.approve){
+        stop("approve");
+      }
+    },20);
+
+    run.download = setInterval(function(){
+      download.text(num[6]);
+      num[6]++;
+      if(num[6] > res.download){
+        stop("download");
+      }
+    },20);
+
+    run.uptime = setInterval(function(){
+      uptime.text(num[7] + "%");
+      num[7]++;
+      if(num[7] > res.uptime){
+        stop("uptime");
+      }
+    },20);
+
+  //function end
+  }
+
+  function stop(method){
+    clearInterval(run[method]);
   }
 
 //end of jquery

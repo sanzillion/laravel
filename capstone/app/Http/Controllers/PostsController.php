@@ -20,8 +20,9 @@ class PostsController extends Controller
             ->paginate(5);
 
         // $archives = Post::archives(); <-- into service provider for every sidebar
-
-    	return view('posts.index', compact('posts'));
+        session(['page' => 'stories']);
+        return view('guest.stories', compact('posts'));
+    	// return view('posts.index', compact('posts'));
     } 
 
     public function show(Post $post){
@@ -33,6 +34,7 @@ class PostsController extends Controller
     }
 
     public function create(){
+        session(['page' => 'create']);
     	return view('posts.create');
     }
 
@@ -78,10 +80,15 @@ class PostsController extends Controller
     }
 
     public function destroy(Post $post){
-        
+
         $post->delete();
 
         session()->flash('message', 'Post has been removed!');
+        if(auth('admin')){
+            return redirect('/admin');
+        } 
+
         return redirect('/');
+
     }
 }
