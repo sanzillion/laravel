@@ -1,4 +1,6 @@
 var test;
+var stat = $('.stat');
+var staticon = $('.statIcon');
 
 var monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
@@ -193,9 +195,38 @@ $(document).ready(function(){
 
     });
 
+//-------------------------------------------------------------
 
+  function notconnected(){
+    // console.log("Mobile App Not Connected!");
+    stat.text('NOT CONNECTED');
+    stat.removeClass('text-greener').addClass('text-redder');
+    staticon.removeClass('bg-greener').addClass('bg-redder');
+  }
 
-  
+  function appstatus(){
+    try{
+      if(appStatus == 'connected'){
+        // console.log(appStatus);
+        stat.text('CONNECTED');
+        stat.removeClass('text-redder').addClass('text-greener');
+        staticon.removeClass('bg-redder').addClass('bg-greener');
+      }
+      else{
+        // console.log(appStatus);
+        notconnected();
+      }
+    }
+    catch(e){
+      notconnected();
+    }
+  }
+
+  setInterval(function(){
+    // console.log("Checking connection");
+    appstatus();
+  }, 1000);
+  //---------------------------------------------------
 
 //end of jquery
 })

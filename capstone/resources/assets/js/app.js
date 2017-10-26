@@ -25,6 +25,10 @@ const app = new Vue({
 	    .listen('MobileApp', (e) => {
 	    	console.log('Broadcasting ' + e.message);
 	        appStatus = 'connected';
+	        clearTimeout(appGreen);
+	        appGreen = setTimeout(function(){
+	        	appStatus = 'notConnected';
+	        }, 15000);
 	    });
 
 	    Echo.channel('msgStatus')

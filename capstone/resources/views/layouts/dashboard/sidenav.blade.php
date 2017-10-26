@@ -19,12 +19,11 @@
   @if(auth()->user()->level == "superuser")
     <li class="master"> <a href="/master"><i class="fa fa-user-secret"></i>Master</a></li>        
   @endif
-    <li class="admin"> <a href="/admin"><i class="fa fa-industry"></i>Dashboard</a></li>
-    
+    <li class="acc"> <a href="#"> <i class="fa fa-address-card"></i>Account</a></li>
+    <li class="admin"> <a href="/admin"><i class="fa fa-area-chart"></i>Dashboard</a></li>
     <li class="blog"> <a href="/blog"> <i class="fa fa-send"></i>Blog Posts </a></li>
     <li class="file"> <a href="/file"> <i class="fa fa-folder-open"></i>File Management </a></li>
     <li class="sms"> <a href="/sms"> <i class="fa fa-phone-square"></i>SMS feature </a></li>
-    <li class="set"> <a href="#"> <i class="fa fa-cog"></i>Settings</a></li>
     <li class="docs"> <a href="#"> <i class="fa fa-rocket"></i>Documentation</a></li>
     <hr>
     <span class="heading">Extras</span>

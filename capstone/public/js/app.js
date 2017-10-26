@@ -4369,6 +4369,10 @@ var app = new Vue({
     Echo.channel('appStatus').listen('MobileApp', function (e) {
       console.log('Broadcasting ' + e.message);
       appStatus = 'connected';
+      clearTimeout(appGreen);
+      appGreen = setTimeout(function () {
+        appStatus = 'notConnected';
+      }, 15000);
     });
 
     Echo.channel('msgStatus').listen('SosApp', function (e) {

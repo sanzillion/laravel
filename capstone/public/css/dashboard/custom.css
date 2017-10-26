@@ -80,6 +80,12 @@
   cursor: pointer;
 }
 
+.text-xm{
+  font-size: .7em;
+  margin-bottom: 0;
+  color: #6f6f6f;
+}
+
 .text-sm{
   font-size: .8em;
 }
@@ -135,6 +141,10 @@
   color: #EB5858; 
 }
 
+.text-gray{
+  color: #6f6f6f;
+}
+
 .folder-badge:hover{
   color: #FCF071;
 }
@@ -152,4 +162,25 @@ a{
 
 .coloroveride{
   background-color: rgba(93, 184, 92, .7) !important;
+}
+
+
+.btn-white{
+  background-color: white;
+  border: 1px solid black;
+}
+
+.btn-white:hover{
+  background-color: #5bc0de;
+  color: white;
+  border: 1px solid #5bc0de;
+}
+
+.sms-icon{
+  background-color: black;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding-top: 4px;
+  margin-top: -5px;
 }

@@ -1,5 +1,4 @@
-    <!-- Javascript files-->
-    
+    <!-- Javascript files-->    
     <script src="{{ asset('js/dashboard/jquery.min.js') }}"></script>
     <script src="{{ asset('js/dashboard/tether.min.js') }}"></script>
     <script src="{{ asset('js/dashboard/bootstrap.min.js') }}"></script>

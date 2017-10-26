@@ -130,6 +130,9 @@
 
   <script>
     var appStatus = 'not connected';
+    var appGreen = setTimeout(function(){
+            appStatus = 'notConnected';
+          }, 15000);;
   </script>
   <script src="{{ asset('js/app.js') }}"></script>
   <script src="{{ asset('js/master.js') }}"></script>
