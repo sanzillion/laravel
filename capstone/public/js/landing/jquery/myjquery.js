@@ -1,5 +1,4 @@
 $(document).ready(function(){
-	
 	$(window).scroll(function(){
 		var scroll = $(window).scrollTop();
 		var width  = $(window).width();
@@ -58,6 +57,12 @@ $(document).ready(function(){
   $('.tagline-lower a').on('click', function(){
   	$('#login').attr('action', '/admin/login');
   })
+
+  //apparently the javascript code does not work on mozilla
+  //jquery is the solution
+  $('.profile__avatar').on('click', function(){
+    $('.profile').addClass('profile--open');
+  });
 
 //end of jquery
 })

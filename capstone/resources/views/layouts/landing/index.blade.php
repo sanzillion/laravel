@@ -45,10 +45,10 @@
         </div>
         <p class="qt-mission">“The HeartCry Missionary Society exists to glorify God through the establishment of biblical
 churches by equipping and mobilizing indigenous churches and missionaries in the least
-evangelized areas of the world.”</p>
+evangelized areas of the worlds.”</p>
       </div>
 
-      <div class="p-4 my-4" id="portfolio">
+      <div class="p-4m my-4" id="portfolio">
           <h4>
           <center></center>
           </h4><br>

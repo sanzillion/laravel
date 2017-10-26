@@ -46,31 +46,31 @@
         <p class="qt-mission">"Education is the most powerful weapon which you can use to change the world." - Nelson Mandela</p>
       </div>
 
-      <div class="p-4 my-4" id="portfolio">
+      <div class="p-4m my-4" id="portfolio">
           <h4>
           <center></center>
           </h4><br>
         <div class="row">
 
-          <div class="col-md-3 col-sm-3 featured-block-rounded">
+          <div class="col-md-3 col-sm-6 featured-block-rounded">
             <a href="#"><figure>
             <img src="{{ asset('images/img/1.jpg') }}" class="img-fluid" alt="">
             </figure></a> <h5></h5>
             <div class="featured-block-equal-cont"><p></p></div>
           </div>
-          <div class="col-md-3 col-sm-3 featured-block-rounded">
+          <div class="col-md-3 col-sm-6 featured-block-rounded">
             <a href="#"><figure>
             <img src="{{ asset('images/img/circle2.png') }}" alt="" class="img-fluid">
             </figure></a> <h5></h5>
             <div class="featured-block-equal-cont"><p></p></div>
           </div>
-          <div class="col-md-3 col-sm-3 featured-block-rounded">
+          <div class="col-md-3 col-sm-6 featured-block-rounded">
             <a href="#"><figure>
             <img src="{{ asset('images/img/circle3.png') }}" alt="" class="img-fluid">
             </figure></a> <h5></h5>
             <div class="featured-block-equal-cont"><p></p></div>
           </div>
-          <div class="col-md-3 col-sm-3 featured-block-rounded">
+          <div class="col-md-3 col-sm-6 featured-block-rounded">
             <a href="#"><figure>
             <img src="{{ asset('images/img/circle4.png') }}" class="img-fluid" alt="">
             </figure></a> <h5></h5>

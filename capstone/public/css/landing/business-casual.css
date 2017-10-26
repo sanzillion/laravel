@@ -245,7 +245,7 @@ hr.divider {
   padding: 3rem !important;
 }
 .p-5{
-  padding: 3rem !important;
+  /*padding: 3rem !important;*/
 }
 .a-4{
   background: rgb(255, 255, 255);
@@ -283,7 +283,7 @@ hr.divider {
   background-image: url('../../images/img/pic8.png');
 }
 .bg-stories{
-  background-image: url('../../images/img/pic9.png');
+  background-image: url('../../images/img/pic6.png');
 }
 
 #about,
@@ -349,7 +349,14 @@ footer{
     padding-right: 55px;
     font-size: 15px;
   }
+
   .p-4{
+    /*padding: 10rem !important;*/
+    padding-bottom: 30px !important;
+    padding-top: 30px !important;
+  }
+
+  .p-4m{
     padding: 10rem !important;
     padding-bottom: 30px !important;
     padding-top: 30px !important;
@@ -437,6 +444,7 @@ footer{
   height: 2rem;
   line-height: 2rem;
   bottom: 0;
+  left: 0;
   color: #999;
   transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }

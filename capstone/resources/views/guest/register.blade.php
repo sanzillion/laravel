@@ -45,12 +45,6 @@
                                       <input id="confirm-password" type="password" name="password_confirmation" required class="input-material">
                                       <label for="confirm-password" class="label-material">Confirm password</label>
                                     </div>
-
-                                    <div class="form-group form-material terms-conditions">
-                                      <input id="license" type="checkbox" class="checkbox-template">
-                                      <label for="license">Agree the terms and policy</label> <br>
-                                        <input id="register" type="submit" value="Register" class="btn btn-sanz"> &nbsp
-                                    </div>
                                 </div>
                             {{-- <div class="col-md-1 col-sm-1"></div> --}}
                                 <div class="col-md-6 col-sm-6">
@@ -70,6 +64,13 @@
                                       <label for="city" class="label-material">City</label>
                                     </div>
 
+                                </div>
+                                <div class="col-md-12 col sm 12">
+                                    <div class="form-group form-material terms-conditions">
+                                      <input id="license" type="checkbox" class="checkbox-template">
+                                      <label for="license">Agree the terms and policy</label> <br>
+                                        <input id="register" type="submit" value="Register" class="btn btn-sanz"> &nbsp
+                                    </div>
                                 </div>
                             </div>
                         </div>
