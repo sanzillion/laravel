@@ -17,13 +17,19 @@
   <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
   <ul class="list-unstyled sidebar">
   @if(auth()->user()->level == "superuser")
-    <li class="master"> <a href="/master"><i class="fa fa-user-secret"></i>Master</a></li>        
+    <li class="master"> <a href="/master"><i class="fa fa-user-secret"></i>
+    <span class="badge bg-orange text-violet float-right">3</span>Master</a></li>        
   @endif
-    <li class="acc"> <a href="#"> <i class="fa fa-address-card"></i>Account</a></li>
-    <li class="admin"> <a href="/admin"><i class="fa fa-area-chart"></i>Dashboard</a></li>
-    <li class="blog"> <a href="/blog"> <i class="fa fa-send"></i>Blog Posts </a></li>
-    <li class="file"> <a href="/file"> <i class="fa fa-folder-open"></i>File Management </a></li>
-    <li class="sms"> <a href="/sms"> <i class="fa fa-phone-square"></i>SMS feature </a></li>
+    <li class="acc"> <a href="#"> <i class="fa fa-address-card"></i>
+    <span class="badge bg-orange text-violet float-right">10</span>Account</a></li>
+    <li class="admin"> <a href="/admin"><i class="fa fa-area-chart"></i>
+    <span class="badge bg-orange text-violet float-right">12</span>Dashboard</a></a></li>
+    <li class="blog"> <a href="/blog"> <i class="fa fa-send"></i>
+    <span class="badge bg-orange text-violet float-right">2</span>Blog Posts </a></li>
+    <li class="file"> <a href="/file"> <i class="fa fa-folder-open"></i>
+    <span class="badge bg-orange text-violet float-right">5</span>File Management </a></li>
+    <li class="sms"> <a href="/sms"> <i class="fa fa-phone-square"></i>
+    <span class="badge bg-orange text-violet float-right">6</span>SMS feature </a></li>
     <li class="docs"> <a href="#"> <i class="fa fa-rocket"></i>Documentation</a></li>
     <hr>
     <span class="heading">Extras</span>

@@ -18,7 +18,7 @@
           <div class="col-md-12 col-sm-12">
             <h2><i class="fa fa-archive"></i>&nbsp Manage Containers &nbsp
               <button type="button" class="btn btn-success btn-sm newContainer">
-                <i class="fa fa-plus icon"></i>&nbsp New Container
+                <i class="fa fa-plus icon"></i>&nbsp Add
               </button>
               @if(auth()->user()->isMaster())
                 <button type="button" class="btn btn-danger btn-sm deleteFolder">

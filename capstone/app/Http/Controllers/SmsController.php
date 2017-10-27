@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Sms;
+use App\Send;
 
 class SmsController extends Controller
 {
@@ -17,7 +18,8 @@ class SmsController extends Controller
     	session(['page' => 'sms']);
 
     	$sms = Sms::all();
-    	return view('admin.sms', compact('sms'));
+    	$pendings = Send::all();
+    	return view('admin.sms', compact(['sms', 'pendings']));
 	}
 
 	public function edit(Sms $sms){

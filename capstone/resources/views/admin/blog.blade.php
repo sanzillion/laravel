@@ -46,7 +46,7 @@
 					      <td>{!! substr($pending->title, 0, 10).'...' !!}</td>
 					      <td>{!! substr($pending->body, 0, 20).'...' !!}</td>
 					      <td>{{ $pending->created_at->toFormattedDateString() }}</td>
-					      <td>{{ $pending->created_at->toFormattedDateString() }}</td>
+					      <td>{{ $pending->created_at->format('h:i A') }}</td>
 					      <td>
 
 							<a class='btn btn-info btn-sm float-left view text-white' 

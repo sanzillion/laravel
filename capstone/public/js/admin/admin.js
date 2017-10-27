@@ -1,8 +1,7 @@
 
 var res;
 $(document).ready(function(){
-
-appstatus();
+  
 loadUsers();
 //USERS TABLE
 // the code below is rendering tables with pagination without 

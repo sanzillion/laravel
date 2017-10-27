@@ -107,6 +107,7 @@ Route::group(['middleware' => 'revalidate'], function(){
 
 	Route::post('/send/create', 'SendController@create');
 	Route::get('/get/{code}', 'SendController@get');
+	Route::delete('/send/{sms}', 'SendController@destroy');
 
 });
 

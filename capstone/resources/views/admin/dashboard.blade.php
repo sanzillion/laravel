@@ -4,7 +4,7 @@
 
   <header class="page-header">
     <div class="container-fluid">
-        <h2 class="no-margin-bottom">General Admin Dashboard / <a href="/admin/manage" style="color: white">
+        <h2 class="no-margin-bottom">General Admin Dashboard / <a href="/admin/manage" style="color: gray">
         <b style="font-size: .8em !important;">Manage Users</b></a></h2>
     </div>
   </header>
@@ -95,7 +95,7 @@
                 <div class="card-header align-items-center text-center">
                   <h3 class="h4">Page View Statistics</h3>
                 </div>
-                <div class="card-body">
+                <div class="card-body no-padding-bottom">
                   <canvas id="barChartExample"></canvas>
                 </div>
               </div>

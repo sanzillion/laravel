@@ -108,8 +108,11 @@ class SendController extends Controller
 		}
 	}
 
-	public function truncate(){
+	public function destroy(Send $sms){
+		$sms->delete();
 
+		session()->flash('message', 'Pending message removed!');
+		return redirect('/sms');
 	}
 
 }

@@ -17,8 +17,13 @@ var poststable = $('.posts');
 var back = $('.back');
 var forward = $('.for');
 
+//custom script to activate tooltips
+$(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+
 $(document).ready(function(){
-  
+
   $('.sidebar li').removeClass('active');
   $('.'+session).addClass('active');
 
@@ -203,6 +208,9 @@ $(document).ready(function(){
     stat.removeClass('text-greener').addClass('text-redder');
     staticon.removeClass('bg-greener').addClass('bg-redder');
   }
+
+  appstatus();
+  //run funtion
 
   function appstatus(){
     try{

@@ -184,3 +184,19 @@ a{
   padding-top: 4px;
   margin-top: -5px;
 }
+
+.none{
+  text-decoration: none;
+}
+
+.none:hover{
+  text-decoration: none;
+}
+
+.none:visited{
+  text-decoration: none;
+}
+
+.givemesomespace{
+  margin-bottom: 10px;
+}

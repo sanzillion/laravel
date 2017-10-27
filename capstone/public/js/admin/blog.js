@@ -104,8 +104,8 @@ loadPosts();
               updated = shortMonthNames[updated.getMonth()]+" "+updated.getDate()+", "+updated.getFullYear();
 
               poststable.append("<tr><th scope='row'>"+post.post_id+"</th>"+
-                "<td>"+post.name+"</td><td>"+post.title.substring(0, 10)+"</td>"+"<td>"
-                +post.body.substring(0, 15)+"</td><td>"+created+"</td><td>"+updated+"</td>"+
+                "<td>"+post.name+"</td><td>"+post.title.substring(0, 10)+"...</td>"+"<td>"
+                +post.body.substring(0, 15)+"...</td><td>"+created+"</td><td>"+updated+"</td>"+
                 "<td><a class='btn btn-info btn-sm float-left viewpost text-white'"+
                 "style='margin-right: 5px;' data-id='"+post.post_id+"'><i class='fa fa-window-maximize'></i>"+
                 "</a><a class='btn btn-danger btn-sm float-left deletePost'"+
