@@ -90,7 +90,7 @@ class UserController extends Controller
         $user->institution = request('institution');
         $user->city = request('city');
 
-        $user->update();
+        $user->save();
 
         session()->flash('message', 'User updated!');
         return redirect()->back();

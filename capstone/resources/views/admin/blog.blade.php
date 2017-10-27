@@ -129,36 +129,7 @@
 			    </tr>
 			  </thead>
 			  <tbody class="posts">
-{{-- 			  @if(count($posts) > 0)
-			  	@foreach ($posts as $post)
-				    <tr>
-				      <th scope="row">{{ $post->id }}</th>
-				      <td>{{ $post->user->name }}</td>
-				      <td>{{ substr($post->title, 0, 10).'...' }}</td>
-				      <td>{!! substr($post->body, 0, 15).'...' !!}</td>
-				      <td>{{ $post->created_at->toFormattedDateString() }}</td>
-				      <td>{{ $post->updated_at->toFormattedDateString() }}</td>
-				      <td>
 
-						<a class='btn btn-info btn-sm float-left viewpost text-white' 
-						style='margin-right: 5px;' data-id='{{ $post->id }}'>
-				      		<i class='fa fa-window-maximize'></i>
-				      	</a>
-
-				      	<a class='btn btn-danger btn-sm float-left deletePost' 
-				      	data-id='{{ $post->id }}'><i class='fa fa-trash text-white'></i></a>
-
-				      </td>
-				    </tr>
-			    @endforeach
-			   @else
-			   		<tr>
-			   			<th colspan="7"></th>
-			   		</tr>
-			   		<tr>
-			   			<th colspan="7" class="text-center"> <h3>No Entry</h3></th>
-			   		</tr>
-			   @endif --}}
 			  </tbody>
 			</table>
 			<div class="container-fluid">
@@ -170,7 +141,6 @@
 						<button class="btn btn-default btn-sm for">
 							Next &nbsp<i class="fa fa-forward"></i>
 						</button>
-						{{-- {{ $posts->render() }} --}}
 					</div>
 				</div>
 			</div>
@@ -226,7 +196,7 @@
 		@slot ('modalBody')	
 			<div class="row">
 				<div class="col-md-12 col-sm-12">
-					{{ Form::open(['action' => ['PostsController@destroy', ''], 'method' => 'POST', 'class' => 'float-left', 'id' => 'postDelete']) }}
+					{{ Form::open(['action' => ['BlogController@destroy', ''], 'method' => 'POST', 'class' => 'float-left', 'id' => 'postDelete']) }}
 						{{ Form::hidden('_method', 'DELETE') }}
 						{{ Form::button('Yes', ['type' => 'submit', 'class' => 'btn btn-danger']) }}
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>

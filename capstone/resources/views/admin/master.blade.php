@@ -36,7 +36,7 @@
 								{{-- <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#createAdmin">
 								  <i class="fa fa-plus-circle"></i>&nbsp New Admin
 								</button> --}}
-								<button type="button" class="btn btn-danger btn-sm deleteAllEntry">
+								<button type="button" class="btn btn-danger btn-sm deleteAllLogs">
 								  <i class="fa fa-exclamation-triangle icon"></i>
 								</button>
 							</h2>
@@ -63,33 +63,30 @@
 			    </tr>
 			  </thead>
 			  <tbody>
-			  {{-- @if(count($admins) > 0) --}}
-			  	{{-- @foreach ($admins as $admin) --}}
-				    {{-- <tr>
-				      <th scope="row" class="text-center">{{ $admin->id }}</th>
-				      <td>{{ $admin->name }}</td>
-				      <td>{{ $admin->email }}</td>
-				      <td>{{ $admin->phone_number }}</td>
-				      <td>
-				      	<a class="btn btn-primary btn-sm float-left editAdmin" style="margin-right: 5px; color: white;" data-id="{{ $admin->id }}"><i class="fa fa-book"></i></a>
-						<a class="btn btn-danger btn-sm float-left deleteAdmin" data-id="{{ $admin->id }}"><i class="fa fa-trash text-white"></i></a>
-				      </td>
-				    </tr> --}}
-			    {{-- @endforeach
-			   @else --}}
+			  @if(count($logs) > 0)
+			  	@foreach ($logs as $log)
+				    <tr>
+				      <th scope="row" class="text-center">{{ $log->id }}</th>
+				      <td>{{ $log->user }}</td>
+				      <td>{{ $log->action }}</td>
+				      <td>{{ $log->description }}</td>
+				      <td>{{ $log->created_at }}</td>
+				    </tr>
+			    @endforeach
+			   @else
 				   	<tr>
 				   		<th colspan="5"></th>	
 				   	</tr>
 				   	<tr>
 				   		<th colspan="5" class="text-center"> <h3>No Entry</h3> </th>
 				   	</tr>
-			   {{-- @endif --}}
+			   @endif
 			  </tbody>
 			</table>
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12 col-sm-12">
-						{{-- {{ $admins->render() }} --}}
+						{{ $logs->render() }}
 					</div>
 				</div>
 			</div>

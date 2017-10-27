@@ -25,6 +25,9 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\Stats' => [
             'App\Listeners\UpdateStat'
         ],
+        'App\Events\Tracker' => [
+            'App\Listeners\Logs'
+        ],
     ];
 
     /**

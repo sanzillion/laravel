@@ -10,7 +10,7 @@ use Carbon\Carbon;
 class PostsController extends Controller
 {
     public function __construct(){
-        $this->middleware('auth')->except(['index', 'show', 'destroy']);
+        $this->middleware('auth')->except(['index', 'show']);
     }
 
     public function index(){
@@ -84,11 +84,8 @@ class PostsController extends Controller
         $post->delete();
 
         session()->flash('message', 'Post has been removed!');
-        if(auth('admin')){
-            return redirect('/admin');
-        } 
 
-        return redirect('/');
+        return redirect('/stories');
 
     }
 }

@@ -113,7 +113,7 @@ $(document).ready(function(){
    // console.log("id = "+id);
    if(id != '')
      {
-        $('#postDelete').attr("action", "/posts/"+id);
+        $('#postDelete').attr("action", "/blog/"+id);
         $('#deletePost').modal('show');
      }
   });

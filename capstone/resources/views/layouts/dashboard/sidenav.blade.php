@@ -20,8 +20,7 @@
     <li class="master"> <a href="/master"><i class="fa fa-user-secret"></i>
     <span class="badge bg-orange text-violet float-right">3</span>Master</a></li>        
   @endif
-    <li class="acc"> <a href="#"> <i class="fa fa-address-card"></i>
-    <span class="badge bg-orange text-violet float-right">10</span>Account</a></li>
+    <li class="acc"> <a href="#"> <i class="fa fa-address-card"></i>Account</a></li>
     <li class="admin"> <a href="/admin"><i class="fa fa-area-chart"></i>
     <span class="badge bg-orange text-violet float-right">12</span>Dashboard</a></a></li>
     <li class="blog"> <a href="/blog"> <i class="fa fa-send"></i>

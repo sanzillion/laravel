@@ -10,12 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'TestController@index')->name('home');
-Route::get('/about', 'TestController@about');
-Route::get('/members', 'TestController@members');
-Route::get('/developers', 'TestController@devs');
+Route::get('/', 'FrontController@index')->name('home');
+Route::get('/about', 'FrontController@about');
+Route::get('/members', 'FrontController@members');
+Route::get('/developers', 'FrontController@devs');
 Route::get('/stories', 'PostsController@index');
-Route::get('/register', 'TestController@register');
+Route::get('/register', 'FrontController@register');
 
 // Route::get('/', 'PostsController@index')->name('home');
 Route::get('/home', 'PostsController@index');
@@ -81,6 +81,7 @@ Route::group(['middleware' => 'revalidate'], function(){
 	Route::get('/blog', 'BlogController@index');
 	Route::get('/blog/{string}/search', 'BlogController@search');
 	Route::get('/blog/{post}', 'BlogController@show');
+	Route::delete('/blog/{post}', 'BlogController@destroy');
 	Route::post('/blog/deleteAll', 'BlogController@deleteAll');
 
 	Route::get('/register/{pending}', 'RegistrationController@store');

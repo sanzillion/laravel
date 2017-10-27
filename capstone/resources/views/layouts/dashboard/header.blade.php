@@ -39,6 +39,11 @@
           <ul aria-labelledby="notifications" class="dropdown-menu">
             <li><a rel="nofollow" href="#" class="dropdown-item"> 
                 <div class="notification">
+                  <div class="notification-content"><i class="fa fa-envelope bg-green"></i>Activities updates</div>
+                  <div class="notification-time"><small>4 minutes ago</small></div>
+                </div></a></li>
+            <li><a rel="nofollow" href="#" class="dropdown-item"> 
+                <div class="notification">
                   <div class="notification-content"><i class="fa fa-envelope bg-green"></i>You have 6 new messages </div>
                   <div class="notification-time"><small>4 minutes ago</small></div>
                 </div></a></li>

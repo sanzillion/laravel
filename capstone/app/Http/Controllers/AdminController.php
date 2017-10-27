@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Application;
 use App\User;
 use App\Admin;
+use App\Tracker;
 use Carbon\Carbon;
 use Auth;
 
@@ -76,7 +77,7 @@ class AdminController extends Controller
         $admin->email = request('email');
         $admin->phone_number = request('phone_number');
 
-        $admin->update();
+        $admin->save();
 
         session()->flash('message', 'Admin updated!');
         return redirect('/master');
@@ -100,7 +101,8 @@ class AdminController extends Controller
         session(['page' => 'master']);
 
     	if(Auth::user()->isMaster()){
-    		return view('admin.master', compact('admins'));
+            $logs = Tracker::simplePaginate(5);
+    		return view('admin.master', compact(['admins', 'logs']));
     	}
     	return redirect('/admin')->with(['message' => 'unauthorize']);
     }
