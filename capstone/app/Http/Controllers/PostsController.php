@@ -16,8 +16,8 @@ class PostsController extends Controller
     public function index(){
 
         $posts = Post::latest()
-            ->filter(request(['month', 'year'])) //filter method in post model
-            ->paginate(5);
+            ->filter(request(['month', 'year', 'search'])) //filter method in post model
+            ->paginate(3);
 
         // $archives = Post::archives(); <-- into service provider for every sidebar
         session(['page' => 'stories']);

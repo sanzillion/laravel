@@ -40,7 +40,15 @@
             <a class="nav-link text-uppercase text-expanded" href="/posts/create">Create Post</a>
           </li>
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="/logout">{{ Auth::user()->name }}</a>
+            <div class="dropdown">
+              <a class="nav-link text-uppercase text-expanded dropdown-toggle" 
+                   id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" 
+                   aria-expanded="false" href="#">{{ Auth::user()->name }}</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                  <a class="dropdown-item text-sm" href="/account/{{ Auth::user()->id }}"><i class="fa fa-user-circle"></i> My Account</a>
+                  <a class="dropdown-item text-sm" href="/logout"><i class="fa fa-sign-out"></i> Logout</a>
+                </div>
+            </div>
           </li>
           {{-- <a class="nav-link" href="/posts/create">Create Post</a>
           <a class="nav-link" href="{{ $url }}">Logout</a>

@@ -45,4 +45,8 @@ class User extends Authenticatable
         //     'user_id' => auth()->id()
         // ]);
     }
+
+    public function logs(){
+        return $this->hasMany(Tracker::class);
+    }
 }

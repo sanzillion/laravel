@@ -22,6 +22,6 @@
   <link href="{{ asset('css/landing/business-casual.css') }}" rel="stylesheet">
 
   <!-- font awesome -->
-  <link href="{{ asset('js/landing/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet">
 
 </head>

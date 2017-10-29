@@ -15,11 +15,20 @@
 		<div class="col-md-4 col-sm-4">
 			<div class="card">
 
+				<div class="card-header"></div>
 				<div class="container-fluid no-margin">
 					<div class="row pad-top">
-						<h2><i class="fa fa-rocket"></i>&nbsp Master Controls &nbsp
-					
-
+						<h2 style="padding-left: 15px;"><i class="fa fa-rocket"></i>&nbsp Master Controls &nbsp</h2>
+						<div class="col-md-12"><hr style="margin-top: 0px"></div>
+						
+						<div class="col-md-12">
+							<h1>
+							<button class="btn btn-warning btn-sm forceLogOut">Force out</button> &nbsp 
+							<i class="fa fa-info-circle text-xsm" data-toggle="tooltip"
+        						data-placement="right" title="Force Log out all users/admins"></i>
+							</h1>
+							
+						</div>
 					</div>
 				</div>
 
@@ -41,14 +50,14 @@
 								</button>
 							</h2>
 						</div>
-						{{-- <div class="col-md-6">
+						<div class="col-md-6">
 							<div class="form-group float-right">
 							  <div class="input-group mb-2 mr-sm-2 mb-sm-0" style="height: 25px;">
 							    <div class="input-group-addon"><i class="fa fa-search" style="font-size: 10px;"></i></div>
-							    <input type="text" class="form-control form-control-sm search" placeholder="search">
+							    <input type="text" class="form-control form-control-sm searchlogs" placeholder="quick search">
 							  </div>
 							</div>
-						</div> --}}
+						</div>
 					</div>
 				</div>
 			
@@ -57,36 +66,25 @@
 			    <tr>
 			      <th class="text-center">#</th>
 			      <th>User</th>
+			      <th>Type</th>
 			      <th>Action</th>
 			      <th>Description</th>
 			      <th>Stamp</th>
 			    </tr>
 			  </thead>
-			  <tbody>
-			  @if(count($logs) > 0)
-			  	@foreach ($logs as $log)
-				    <tr>
-				      <th scope="row" class="text-center">{{ $log->id }}</th>
-				      <td>{{ $log->user }}</td>
-				      <td>{{ $log->action }}</td>
-				      <td>{{ $log->description }}</td>
-				      <td>{{ $log->created_at }}</td>
-				    </tr>
-			    @endforeach
-			   @else
-				   	<tr>
-				   		<th colspan="5"></th>	
-				   	</tr>
-				   	<tr>
-				   		<th colspan="5" class="text-center"> <h3>No Entry</h3> </th>
-				   	</tr>
-			   @endif
+			  <tbody class="tbody-logs">
+				{{-- activity.js  --}}
 			  </tbody>
 			</table>
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12 col-sm-12">
-						{{ $logs->render() }}
+						<button class="btn btn-default btn-sm back">
+							<i class="fa fa-backward"></i>&nbsp Previous
+						</button>
+						<button class="btn btn-default btn-sm for">
+							Next &nbsp<i class="fa fa-forward"></i>
+						</button>
 					</div>
 				</div>
 			</div>
@@ -208,9 +206,14 @@
 		@endslot
 
 		@slot ('modalFooter')
-			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        	{{ Form::submit('Save Changes', ['class' => 'btn btn-primary']) }}
-		    {{ Form::close() }}
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						{{ Form::submit('Save Changes', ['class' => 'btn btn-primary btn-block']) }}
+						{{ Form::close() }}
+					</div>
+				</div>
+			</div>
 		@endslot
 	@endcomponent
 
@@ -275,9 +278,14 @@
 		@endslot
 
 		@slot ('modalFooter')
-			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        	{{ Form::submit('Create', ['class' => 'btn btn-info']) }}
-		    {{ Form::close() }}
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						{{ Form::submit('Create', ['class' => 'btn btn-info btn-block']) }}
+						{{ Form::close() }}
+					</div>
+				</div>
+			</div>
 		@endslot
 	@endcomponent
 	
@@ -325,10 +333,60 @@
 						<button class="btn btn-danger" type="submit">Yes</button>
 						<button type="button" class="btn btn-secondary no" data-dismiss="modal">No</button>
 					</form>
-					{{-- {{ Form::open(['action' => ['AdminController@deleteAdmins', ''], 'method' => 'POST', 'id'=>'deleteForm']) }}
-						{{ Form::button('Yes', ['type' => 'submit', 'class' => 'btn btn-danger']) }}
+				</div>
+			</div>
+	      	
+		@endslot
+
+		@slot ('modalFooter')
+		@endslot
+	@endcomponent
+
+	@component ('layouts.dashboard.sm-modal')
+		@slot ('id')
+			deleteAllLogs
+		@endslot
+
+		@slot ('title')
+			<i class="fa fa-asterisk text-danger"></i> Proceed with caution!
+			Do you want to delete ALL Log entries? Are you sure?
+		@endslot
+
+		@slot ('modalBody')	
+			<div class="row">
+				<div class="col-md-12 col-sm-12">
+					<form action="/activity/deleteAll" method="POST">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<button class="btn btn-danger" type="submit">Yes</button>
 						<button type="button" class="btn btn-secondary no" data-dismiss="modal">No</button>
-					{{ Form::close() }} --}}
+					</form>
+				</div>
+			</div>
+	      	
+		@endslot
+
+		@slot ('modalFooter')
+		@endslot
+	@endcomponent
+
+	@component ('layouts.dashboard.sm-modal')
+		@slot ('id')
+			forceLogOut
+		@endslot
+
+		@slot ('title')
+			<i class="fa fa-asterisk text-danger"></i> Proceed with caution!
+			Log out all users and admins? Are you sure?
+		@endslot
+
+		@slot ('modalBody')	
+			<div class="row">
+				<div class="col-md-12 col-sm-12">
+					<form action="/activity/forceOut" method="POST">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<button class="btn btn-danger" type="submit">Yes</button>
+						<button type="button" class="btn btn-secondary no" data-dismiss="modal">No</button>
+					</form>
 				</div>
 			</div>
 	      	
@@ -343,4 +401,5 @@
 
 @section ('scripts')
 	<script src="{{ asset('js/master.js') }}"></script>
+	<script src="{{ asset('js/admin/activity.js') }}"></script>
 @endsection

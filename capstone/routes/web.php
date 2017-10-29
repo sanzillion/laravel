@@ -51,6 +51,10 @@ Route::get('/password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm
 Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
 Route::get('/passowrd/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 
+Route::post('/contact', 'MsgController@store');
+Route::get('/msg/{msg}', 'MsgController@get');
+Route::delete('/msg/{msg}/delete', 'MsgController@destroy');
+
 Route::group(['middleware' => 'revalidate'], function(){
 
 	Route::get('/admin', 'AdminController@index')->name('admin.dashboard');
@@ -110,10 +114,22 @@ Route::group(['middleware' => 'revalidate'], function(){
 	Route::get('/get/{code}', 'SendController@get');
 	Route::delete('/send/{sms}', 'SendController@destroy');
 
+	Route::get('/activity/logs', 'TrackerController@getLogs');
+	Route::get('/activity/{logs}/search', 'TrackerController@search');
+	Route::post('/activity/deleteAll', 'TrackerController@deleteAll');
+	Route::post('/activity/forceOut', 'TrackerController@forceOut');
+
+	Route::get('/account', 'AccountController@index');
+	Route::post('/account/{admin}/pass', 'AccountController@passupdate');
+	Route::get('/account/{user}', 'AccountController@show');
+	Route::put('/account/{user}/update', 'AccountController@update');
+	Route::post('/account/{user}/password', 'AccountController@store');
 });
 
 //download any file from directory
 Route::get('/download/{file}', 'DownloadsController@download');
+Route::get('/downloadables/{file}', 'DownloadsController@downloadables');
+Route::get('/download/to/csv', 'DownloadsController@activitylogs');
 
 Route::get('/stat', 'StatController@get');
 Route::get('/stat/all', 'StatController@everything');

@@ -200,3 +200,11 @@ a{
 .givemesomespace{
   margin-bottom: 10px;
 }
+
+.margin-top{
+  margin-top: 5px;
+}
+
+.margin-bot{
+  margin-bottom: 5px;
+}

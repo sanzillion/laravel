@@ -491,6 +491,12 @@ input:valid + .label-material {
   color: white;
 }
 
+.btn-xsm{
+  font-size: .8em;
+  padding: 0.5rem 0.75rem !important;
+  display: inline;
+}
+
 .showpostbox{
   padding: 30px;
 }
@@ -518,4 +524,8 @@ input:valid + .label-material {
 
 .padtop{
   padding-top: 20px;
+}
+
+.text-sm{
+  font-size: .8em;
 }

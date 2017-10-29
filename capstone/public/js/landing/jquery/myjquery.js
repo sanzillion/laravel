@@ -64,5 +64,24 @@ $(document).ready(function(){
     $('.profile').addClass('profile--open');
   });
 
+  $('.searchPosts').on('click', function(e){
+    e.preventDefault();
+    var string = $('.searchinput').val();
+    if(string != ''){
+      $('#searchPostForm').attr('action', "/stories?search="+string);
+      console.log($('#searchPostForm').attr('action'));
+      window.location.href = '/stories?search='+string;
+    }
+
+  });
+
+  $('.editAcc').on("click", function () {
+        $('#editAcc').modal('show');
+  });  
+
+  $('.editPass').on("click", function () {
+        $('#editPass').modal('show');
+  });  
+
 //end of jquery
 })

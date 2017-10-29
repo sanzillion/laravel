@@ -12,9 +12,9 @@
 	@endif
 
 	//this code does not work on mozilla, use jquery instead on myjquery file
-	document.getElementById('toggleProfile').addEventListener('click', function () {
-	  [].map.call(document.querySelectorAll('.profile'), function(el) {
-	    el.classList.toggle('profile--open');
-	  });
-	});
+	// document.getElementById('toggleProfile').addEventListener('click', function () {
+	//   [].map.call(document.querySelectorAll('.profile'), function(el) {
+	//     el.classList.toggle('profile--open');
+	//   });
+	// });
 </script>

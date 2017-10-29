@@ -139,7 +139,7 @@
       <div class="col-md-4 col-sm-12">
         <div class="card">
           <div class="card-header">
-          <h2><i class="fa fa-globe"></i>&nbsp Blast &nbsp
+          <h2><i class="fa fa-bullhorn"></i>&nbsp Blast &nbsp
             <button class="btn btn-danger btn-sm float-right editSms" value="{{ $sms[0]->id }}">
             <i class="fa fa-edit"></i></button> 
           </h2>
@@ -251,8 +251,7 @@
     </div>
 
     <div class="text-center">
-      <button type="submit" class="btn btn-info">Update</button>
-      <button type="button" class="btn btn-secondary no" data-dismiss="modal">Cancel</button>
+      <button type="submit" class="btn btn-info btn-block">Update</button>
     </div>
       <hr>
     </form>

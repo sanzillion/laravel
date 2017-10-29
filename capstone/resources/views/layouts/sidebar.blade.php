@@ -1,14 +1,16 @@
 
           <h6><b>SEARCH</b></h6>
           <hr class="style1">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search Posts..">
-            <div class="input-group-btn">
-              <button class="btn btn-sanz" type="submit">
-                <i class="fa fa-search"></i>
-              </button>
+          <form id="searchPostForm" action="/stories" method="GET">
+            <div class="input-group">
+              <input type="text" class="form-control searchinput" required placeholder="Search Posts..">
+              <div class="input-group-btn">
+                <button class="btn btn-sanz searchPosts" type="submit">
+                  <i class="fa fa-search"></i>
+                </button>
+              </div>
             </div>
-          </div>
+          </form>
           <hr>
           <div class="sidebar-module sidebar-module-inset">
             <h4>About</h4>
@@ -16,6 +18,11 @@
           </div>
           <hr>
           <h5><b>RECENT POSTS</b></h5>
+          @foreach ($recents as $recent)
+            <a href="/posts/{{  $recent->id }}">
+                <h3 class="text-sm">{{ substr($recent->title, 0, 15).'... ' }} by {{ $recent->user->name }}</h3>
+            </a>
+          @endforeach
           <hr class="style2">
           <p class="con-p"></p>
           <div class="sidebar-module">
@@ -24,7 +31,7 @@
             <ol class="list-unstyled">
               @foreach ($archives as $stats)
                 <li>
-                  <a href="/?month={{ $stats['month'] }}&year={{ $stats['year'] }}">{{ $stats['month'] . ' ' . $stats['year'] }}</a>
+                  <a href="/stories?month={{ $stats['month'] }}&year={{ $stats['year'] }}">{{ $stats['month'] . ' ' . $stats['year'] }}</a>
                 </li>
               @endforeach
             </ol>

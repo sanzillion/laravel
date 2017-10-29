@@ -45,46 +45,49 @@
                       <i class="fa fa-facebook-square"></i>&nbsp saveourschoolsnetworkfb</a>
                   </p>
                 </div><br>
-                <form>
-                  <div class="row">
-                    <div class="col-md-12 col-sm-12">
-                    <div class="card">
-                      <div class="card-header text-center">
-                        <h4>Contact US</h4>
-                      </div>
-                      <div class="card-body">
-                        <div class="row" id="registration-form">
-                          <div class="col-lg-5">
-                            <div class="form-group form-material">
-                              <input id="name" type="text" required name="name" class="input-material">
-                              <label for="name" class="label-material">Name:</label>
-                            </div>
-                            <div class="form-group form-material">
-                              <input id="email" type="email" required name="email" class="input-material">
-                              <label for="email" class="label-material">Email Address:</label>
-                            </div>
-                            <div class="form-group form-material">
-                              <input id="phone" type="tel" required name="phone" class="input-material">
-                              <label for="phone" class="label-material">Phone Number:</label>
-                            </div>
-                          </div>
 
-                          <div class="col-lg-7">
-                            <div class="clearfix"></div>
-                            <div class="form-group col-lg-12">
-                              <label class="text-heading blurr">Message:</label>
-                              <textarea class="form-control" rows="6"></textarea>
-                            </div>
-                            <div class="form-group col-lg-12">
-                              <button type="submit" class="btn btn-sanz float-right">Submit</button>
-                            </div>
+                <form action="/contact" method="POST">
+                    {{ csrf_field() }}
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12">
+                      <div class="card">
+                        <div class="card-header text-center">
+                          <h4>Contact US</h4>
+                        </div>
+                        <div class="card-body">
+                          <div class="row" id="registration-form">
+
+                               <div class="col-lg-5">
+                                <div class="form-group form-material">
+                                  <input id="name" type="text" required name="name" class="input-material">
+                                  <label for="name" class="label-material">Name:</label>
+                                </div>
+                                <div class="form-group form-material">
+                                  <input id="email" type="email" required name="email" class="input-material">
+                                  <label for="email" class="label-material">Email Address:</label>
+                                </div>
+                                <div class="form-group form-material">
+                                  <input id="phone" type="tel" required name="phone_number" class="input-material">
+                                  <label for="phone" class="label-material">Phone Number:</label>
+                                </div>
+                              </div>
+
+                              <div class="col-lg-7">
+                                <div class="clearfix"></div>
+                                <div class="form-group col-lg-12">
+                                  <label class="text-heading blurr">Message:</label>
+                                  <textarea type="text" class="form-control" rows="6" name="msg"></textarea>
+                                </div>
+                                <div class="form-group col-lg-12">
+                                  <button type="submit" onclick="form.submit()" class="btn btn-sanz float-right">Submit</button>
+                                </div>
+                              </div>
                           </div>
                         </div>
-                      </div>
+                        </div>
+                       </div> 
                     </div>
-                   </div> 
-              </div>
-            </form>
+                </form>
           </div>
       </div>
     </div>

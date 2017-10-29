@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Events\Stats;
 use Auth;
 use App\Admin;
+use App\Tracker;
 
 class AdminLoginController extends Controller
 {
@@ -38,12 +39,13 @@ class AdminLoginController extends Controller
 
         $admin = Admin::where('email', $request->email)->first();
         
-        if(!Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)){
+        if(!$count = Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)){
             return back()->withErrors([
                 'message' => 'Please check your credentials and try again.'
             ])->withInput($request->only('email', 'remember'));
         }
 
+        Tracker::log($admin->id, 'admin', 'Admin Login', 'Attempt: '.$count);
         session(['menu' => 'active', 'appStatus' => 'undefined']);
         event(new Stats('a_log'));
 
@@ -108,6 +110,7 @@ class AdminLoginController extends Controller
      */
     public function destroy()
     {
+        Tracker::log(Auth::guard('admin')->user()->id, 'admin', 'Admin Logout', 'None');
         Auth::guard('admin')->logout();
 
         return redirect()->home();

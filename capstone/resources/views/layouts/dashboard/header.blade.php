@@ -35,54 +35,72 @@
         <!-- Search-->
         {{-- <li class="nav-item d-flex align-items-center" style="margin-right: 12px;"><a id="search" href="#"><i class="icon-search"></i></a></li> --}}
         <!-- Notifications-->
-        <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell-o"></i><span class="badge bg-red">12</span></a>
+        <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell-o"></i>
+          @if($notif['count'] > 0)
+            <span class="badge bg-red">{{ $notif['count'] }}</span>
+          @endif
+          </a>
+
           <ul aria-labelledby="notifications" class="dropdown-menu">
-            <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                <div class="notification">
-                  <div class="notification-content"><i class="fa fa-envelope bg-green"></i>Activities updates</div>
-                  <div class="notification-time"><small>4 minutes ago</small></div>
-                </div></a></li>
-            <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                <div class="notification">
-                  <div class="notification-content"><i class="fa fa-envelope bg-green"></i>You have 6 new messages </div>
-                  <div class="notification-time"><small>4 minutes ago</small></div>
-                </div></a></li>
-            <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                <div class="notification">
-                  <div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2 followers</div>
-                  <div class="notification-time"><small>4 minutes ago</small></div>
-                </div></a></li>
-            <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                <div class="notification">
-                  <div class="notification-content"><i class="fa fa-upload bg-orange"></i>Server Rebooted</div>
-                  <div class="notification-time"><small>4 minutes ago</small></div>
-                </div></a></li>
-            <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                <div class="notification">
-                  <div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2 followers</div>
-                  <div class="notification-time"><small>10 minutes ago</small></div>
-                </div></a></li>
+
+            @if ($notif['count'] > 0)
+
+              @if ($notif['txt'] > 0)
+                <li><a rel="nofollow" href="/sms" class="dropdown-item"> 
+                  <div class="notification">
+                    <div class="notification-content"><i class="fa fa-envelope bg-red"></i>{{ $notif['txt'] }} pending text msgs</div>
+                    <div class="notification-time"><small>{{ $notif['txttime'] }}</small></div>
+                  </div></a></li>
+              @endif
+
+              @if ($notif['apply'] > 0)
+                <li><a rel="nofollow" href="/admin/manage" class="dropdown-item"> 
+                  <div class="notification">
+                    <div class="notification-content"><i class="fa fa-address-book bg-green"></i>{{ $notif['apply'] }} user application </div>
+                    <div class="notification-time"><small>{{ $notif['applytime'] }}</small></div>
+                  </div></a></li>
+              @endif
+
+              @if ($notif['entry'] > 0)
+                <li><a rel="nofollow" href="/blog" class="dropdown-item"> 
+                  <div class="notification">
+                    <div class="notification-content"><i class="fa fa-pencil bg-blue"></i>{{ $notif['entry'] }} blog entries</div>
+                    <div class="notification-time"><small>{{ $notif['entrytime'] }}</small></div>
+                  </div></a></li>
+              @endif
+
+              @if ($notif['files'] > 0)
+                <li><a rel="nofollow" href="/sms" class="dropdown-item"> 
+                  <div class="notification">
+                    <div class="notification-content"><i class="fa fa-upload bg-orange"></i>{{ $notif['files'] }} new files uploaded</div>
+                    <div class="notification-time"><small>{{ $notif['filestime'] }}</small></div>
+                  </div></a></li>
+              @endif
+
+            @else
+              <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong> No notifications </strong></a></li> 
+            @endif
+
           </ul>
         </li>
         <!-- Messages                        -->
-        <li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope-o"></i><span class="badge bg-orange">10</span></a>
+        <li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope-o"></i>
+        @if($notif['msg']->count() > 0)
+          <span class="badge bg-orange">{{ $notif['msg']->count() }}</span>
+        @endif
+        </a>
           <ul aria-labelledby="notifications" class="dropdown-menu">
-            <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-                <div class="msg-profile"> <img src="{{ asset('images/sandy.jpg') }}" alt="..." class="img-fluid rounded-circle"></div>
-                <div class="msg-body">
-                  <h3 class="h5">Sanz Moses</h3><span>Sent You Message</span>
-                </div></a></li>
-            <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-                <div class="msg-profile"> <img src="{{ asset('images/zak1.jpg') }}" alt="..." class="img-fluid rounded-circle"></div>
-                <div class="msg-body">
-                  <h3 class="h5">Zak Zailon</h3><span>Sent You Message</span>
-                </div></a></li>
-            <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-                <div class="msg-profile"> <img src="{{ asset('images/wasme.jpg') }}" alt="..." class="img-fluid rounded-circle"></div>
-                <div class="msg-body">
-                  <h3 class="h5">Aljon Khuzan</h3><span>Sent You Message</span>
-                </div></a></li>
-            <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>Read all messages    </strong></a></li>
+            @if ($notif['msg']->count() > 0)
+              @foreach ($notif['msg'] as $msg) 
+                <li><a rel="nofollow" href="/account" class="dropdown-item d-flex"> 
+                  <div class="msg-profile"><i class="fa fa-user-circle-o text-lg"></i></div>
+                  <div class="msg-body">
+                    <h3 class="h5">{{ $msg->from }}</h3><span>Sent You Message</span>
+                  </div></a></li>
+              @endforeach
+            @else
+              <li><a rel="nofollow" href="/account" class="dropdown-item all-notifications text-center"> <strong>Read all messages</strong></a></li>
+            @endif
           </ul>
         </li>
         <!-- Logout    -->

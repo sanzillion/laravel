@@ -57,6 +57,6 @@
 
 <script>
   $(document).ready(function(){
-    $('.login-page').css('background-image', 'url({{ asset('images/b2school.jpg') }})');
+    $('.login-page').css('background-image', 'url({{ asset('images/img/pic3.png') }})');
   })
 </script>

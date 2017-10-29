@@ -14,41 +14,50 @@ class Model extends Eloquent
     {
         static::created(function ($model) {
             // dd($model);
-            if(\Auth::guard('admin')->check()){
-                $name = get_class($model);
-                $name = substr($name, strpos($name, '\\')+1, strlen($name));
-                // event(new Tracking(auth()->user()->name, 'Created', $name.': id = '.$model->id));
-                Tracker::create([
-                    'user' => auth()->user()->name,
-                    'action' => 'Created',
-                    'description' => $name.': id = '.$model->id
-                ]);
+            if(auth()->check()){
+                if(\Auth::guard('admin')->check()){
+                    $name = get_class($model);
+                    $name = substr($name, strpos($name, '\\')+1, strlen($name));
+                    // event(new Tracking(auth()->user()->name, 'Created', $name.': id = '.$model->id));
+                    Tracker::create([
+                        'user' => auth()->user()->id,
+                        'type' => 'admin',
+                        'action' => 'Created',
+                        'description' => $name.': id = '.$model->id
+                    ]);
+                }
             }
         });
 
         static::updated(function ($model) {
-            if(\Auth::guard('admin')->check()){
-                $name = get_class($model);
-                $name = substr($name, strpos($name, '\\')+1, strlen($name));
-                // event(new Tracking(auth()->user()->name, 'Created', $name.': id = '.$model->id));
-                Tracker::create([
-                    'user' => auth()->user()->name,
-                    'action' => 'Updated',
-                    'description' => $name.': id = '.$model->id
-                ]);
+            if(auth()->check()){
+                if(\Auth::guard('admin')->check()){
+                    $name = get_class($model);
+                    $name = substr($name, strpos($name, '\\')+1, strlen($name));
+                    // event(new Tracking(auth()->user()->name, 'Created', $name.': id = '.$model->id));
+                    Tracker::create([
+                        'user' => auth()->user()->id,
+                        'type' => 'admin',
+                        'action' => 'Updated',
+                        'description' => $name.': id = '.$model->id
+                    ]);
+                }   
             }
         });
 
         static::deleted(function ($model) {
-            if(\Auth::guard('admin')->check()){
-                $name = get_class($model);
-                $name = substr($name, strpos($name, '\\')+1, strlen($name));
-                // event(new Tracking(auth()->user()->name, 'Created', $name.': id = '.$model->id));
-                Tracker::create([
-                    'user' => auth()->user()->name,
-                    'action' => 'Deleted',
-                    'description' => $name.': id = '.$model->id
-                ]);
+            if(auth()->check()){
+                if(\Auth::guard('admin')->check()){
+                    $name = get_class($model);
+                    $name = substr($name, strpos($name, '\\')+1, strlen($name));
+                    // event(new Tracking(auth()->user()->name, 'Created', $name.': id = '.$model->id));
+                    Tracker::create([
+                        'user' => auth()->user()->id,
+                        'type' => 'admin',
+                        'action' => 'Deleted',
+                        'description' => $name.': id = '.$model->id
+                    ]);
+                }
             }
         });
         

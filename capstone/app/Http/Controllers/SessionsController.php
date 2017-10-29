@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Tracker;
 use Illuminate\Http\Request;
 use App\Events\Stats;
 
@@ -40,11 +41,12 @@ class SessionsController extends Controller
      */
     public function store()
     {
-        if(! auth()->attempt(request(['email', 'password']))){
+        if(!$count = auth()->attempt(request(['email', 'password']))){
             return back()->withErrors([
                 'message' => 'Please check your credentials and try again.'
             ]);
         }
+        Tracker::log(auth()->user()->id, 'user', 'User Login', 'Attempt: '.$count);
         event(new Stats('m_log'));
         return redirect()->home();
     }
@@ -91,6 +93,8 @@ class SessionsController extends Controller
      */
     public function destroy()
     {
+        Tracker::log(auth()->user()->id, 'user', 'User out', 'None');
+        
         auth()->logout();
 
         return redirect()->home();

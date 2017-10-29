@@ -79,8 +79,8 @@ class AdminController extends Controller
 
         $admin->save();
 
-        session()->flash('message', 'Admin updated!');
-        return redirect('/master');
+        session()->flash('message', 'Account updated!');
+        return redirect()->back();
 
     }
 
@@ -101,7 +101,7 @@ class AdminController extends Controller
         session(['page' => 'master']);
 
     	if(Auth::user()->isMaster()){
-            $logs = Tracker::simplePaginate(5);
+            $logs = Tracker::latest()->simplePaginate(5);
     		return view('admin.master', compact(['admins', 'logs']));
     	}
     	return redirect('/admin')->with(['message' => 'unauthorize']);

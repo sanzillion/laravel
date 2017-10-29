@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTrackersTable extends Migration
+class CreateMsgsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateTrackersTable extends Migration
      */
     public function up()
     {
-        Schema::create('trackers', function (Blueprint $table) {
+        Schema::create('msgs', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user');
-            $table->string('type');
-            $table->string('action');
-            $table->text('description')->nullable();
+            $table->string('from');
+            $table->string('to');
+            $table->text('msg');
+            $table->string('email');
+            $table->bigInteger('phone');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreateTrackersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('trackers');
+        Schema::dropIfExists('msgs');
     }
 }

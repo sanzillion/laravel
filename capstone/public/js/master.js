@@ -12,7 +12,9 @@ var shortMonthNames = ["Jan", "Feb", "Mar", "Apr", "May", "June",
 
 var link = "/admin/users";
 var blogLink = "/blog/posts";
+var loglink = "/activity/logs";
 var usertable = $('.user');
+var logstable = $('.tbody-logs');
 var poststable = $('.posts');
 var back = $('.back');
 var forward = $('.for');
@@ -153,6 +155,15 @@ $(document).ready(function(){
   $('.deleteAllPosts').on("click", function () {
     $(this).html('<i class="fa fa-spinner fa-pulse fa-fw"></i>');
     $('#deleteAllPosts').modal('show');
+  });   
+
+  $('.deleteAllLogs').on("click", function () {
+    $(this).html('<i class="fa fa-spinner fa-pulse fa-fw"></i>');
+    $('#deleteAllLogs').modal('show');
+  });   
+
+  $('.forceLogOut').on("click", function () {
+    $('#forceLogOut').modal('show');
   });  
 
   $('.accept').on("click", function () {
@@ -235,6 +246,7 @@ $(document).ready(function(){
     appstatus();
   }, 1000);
   //---------------------------------------------------
+
 
 //end of jquery
 })
