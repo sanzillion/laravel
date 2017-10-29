@@ -38,7 +38,8 @@ class Post extends Model
 
         if(array_key_exists('search', $filters)) {
             if($string = $filters['search']){
-                $query->where('title', 'like', "$string%")->orWhere('body', 'like', "$string%");
+                $query->where('title', 'like', "$string%")
+                ->orWhere('body', 'like', "$string%");
             }
         }
 

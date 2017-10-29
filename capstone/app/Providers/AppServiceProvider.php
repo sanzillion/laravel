@@ -4,14 +4,18 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\QueryException;
-use Auth;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use App\Application;
+use App\Events\Stats;
+use Carbon\Carbon;
+use App\Tracker;
 use App\Entry;
 use App\File;
 use App\Msg;
 use App\Send;
-use App\Tracker;
-use Carbon\Carbon;
+use Auth;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,16 +33,14 @@ class AppServiceProvider extends ServiceProvider
             $view->with(compact('archives','tags', 'recents'));
         });
 
-        view()->composer('layouts.nav', function($view){
-
-            if(Auth::guard('admin')->check()){
-                $url = '/admin/logout';
+        view()->composer('layouts.landing.nav', function($view){
+            if(session('visit') != "yes"){
+                Log::info('Visited == none');
+                event(new Stats('visitor'));
             }
             else{
-                $url = '/logout';
+                Log::info('Visited == yes');
             }
-
-            $view->with('url', $url);
         });
 
         view()->composer('layouts.dashboard.header', function($view){

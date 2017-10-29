@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
+    public function __construct(){
+        
+    }
     /**
      * Display a listing of the resource.
      *
@@ -19,30 +22,35 @@ class FrontController extends Controller
     
     public function about()
     {
+        session(['visit' => 'yes']);
         session(['page' => 'about']);
         return view('guest.about');
     }    
     
     public function members()
     {
+        session(['visit' => 'yes']);
         session(['page' => 'members']);
         return view('guest.members');
     }
     
     public function devs()
     {
+        session(['visit' => 'yes']);
         session(['page' => 'devs']);
         return view('guest.devs');
     }
 
     public function stories()
     {
+        session(['visit' => 'yes']);
         session(['page' => 'stories']);
         return view('guest.stories');
     }
 
     public function register()
     {
+        session(['visit' => 'yes']);
         session(['page' => 'register']);
         return view('guest.register');
     }

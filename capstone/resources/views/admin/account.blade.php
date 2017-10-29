@@ -45,8 +45,8 @@
             </table>
 
             <p class="text-sm">
-            <a class="btn btn-info btn-xsm margin-bot editAcc" href="#" data-id="{{ $admin->id }}">Edit Account</a>
-            <a class="btn btn-success btn-xsm margin-bot editPass" href="#" data-id="{{ $admin->id }}">Change Password</a></p>
+            <a class="btn btn-info btn-sm margin-bot editAcc" href="#" data-id="{{ $admin->id }}">Edit Account</a>
+            <a class="btn btn-success btn-sm margin-bot editPass" href="#" data-id="{{ $admin->id }}">Change Password</a></p>
           </div>
         </div> 
       </div>

@@ -61,7 +61,7 @@
       <ul id="dashvariants" class="collapse list-unstyled">
         <li><a href="/downloadables/documentation.doc"><i class="fa fa-file-word-o"></i> Docs</a></li>
         <li><a href="/downloadables/cpstn.sql"><i class="fa fa-database"></i> SQL Database</a></li>
-        <li><a href="#"><i class="fa fa-file"></i> Test Entries</a></li>
+        <li><a href="/downloadables/test.zip"><i class="fa fa-file"></i> Test Entries</a></li>
         <li><a href="/download/to/csv"><i class="fa fa-file-excel-o"></i> Activity Logs</a></li>
       </ul>
     </li>
