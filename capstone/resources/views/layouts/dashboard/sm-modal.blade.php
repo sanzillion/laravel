@@ -10,6 +10,7 @@
       <div class="modal-body">
         {{ $modalBody }}      			
       </div>
+
     </div>
   </div>
 </div>

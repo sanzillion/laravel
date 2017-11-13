@@ -4,7 +4,11 @@
 }
 
 .pad-top{
-	padding-top: 20px;
+  padding-top: 20px;
+}
+
+.pad-left{
+	padding-left: 20px;
 }
 
 .search{
@@ -207,4 +211,38 @@ a{
 
 .margin-bot{
   margin-bottom: 5px;
+}
+
+#city{
+  color: #d2d2d2;
+  padding: 9px 5px;
+  background-color: white;
+  border: 1px solid #e6e6e6;
+}
+
+.another{
+  color: #459545;
+  text-decoration: none;
+}
+
+.another:hover{
+  text-decoration: none;
+  color: #004500;
+}
+
+.table-sanz{
+  border: 2px solid #c9c9c9 !important;
+}
+
+.fromusers tr td{
+  padding-bottom: 0px !important;
+}
+
+.chk{
+  margin-right: 0px !important;
+}
+
+.usersForm{
+  height: 300px;
+  overflow: auto;
 }

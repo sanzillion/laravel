@@ -21,10 +21,12 @@ class SendController extends Controller
     
 	public function create(){
 
-		if(isset(request()->num)){
-			//if send through the txt msg form
+		//if send through the txt msg form
+		if(isset(request()->num) || request()->city != null){
+			(request()->city != null)? $r = request()->city : $r = request()->num;
+			
 			$sender = 'SOSnetwork App';
-			$recipient = request('num');
+			$recipient = $r;
 			$body = request('body');
 		}
 		else{
@@ -99,9 +101,15 @@ class SendController extends Controller
 				$names = $name->merge(Admin::pluck('name'));
 				$array['num'] = $numbers;
 				$array['name'] = $names;
-			}else{
+			}else if(is_numeric($sms->recipient)){
 				$array['num'][0] = $sms->recipient;
 				$array['name'][0] = '';
+			}
+			else{
+				$user = User::where('city', $sms->recipient)->pluck('phone_number');
+				$name = User::where('city', $sms->recipient)->pluck('name');
+				$array['num'] = $user;
+				$array['name'] = $name;
 			}
 
 			return $array;
