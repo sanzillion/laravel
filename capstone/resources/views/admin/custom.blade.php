@@ -104,9 +104,9 @@
                     <td>{{ $custom->phone_number }}</td>
                     <td>{{ $custom->created_at->diffForHumans() }}</td>
                     <td>
-                      <button class="btn btn-success deletePending btn-sm" data-id="{{ $custom->id }}">
+                      <button class="btn btn-success editRecipient btn-sm" data-id="{{ $custom->id }}">
                       <i class="fa fa-edit"></i></button>
-                      <button class="btn btn-danger deletePending btn-sm" data-id="{{ $custom->id }}">
+                      <button class="btn btn-danger deleteRecipient btn-sm" data-id="{{ $custom->id }}">
                       <i class="fa fa-trash"></i></button>
                     </td>
                   </tr>
@@ -168,6 +168,32 @@
 
   @component ('layouts.dashboard.sm-modal')
     @slot ('id')
+      deleteRecipient
+    @endslot
+
+    @slot ('title')
+      <i class="fa fa-asterisk text-danger"></i> Are you sure?
+    @endslot
+
+    @slot ('modalBody') 
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          {{ Form::open(['action' => ['CustomController@destroy', ''], 'method' => 'POST', 'class' => 'float-left', 'id' => 'rDelete']) }}
+            {{ Form::hidden('_method', 'DELETE') }}
+            {{ Form::button('Yes', ['type' => 'submit', 'class' => 'btn btn-danger']) }}
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+          {{ Form::close() }}
+        </div>
+      </div>
+          
+    @endslot
+
+    @slot ('modalFooter')
+    @endslot
+  @endcomponent
+
+  @component ('layouts.dashboard.sm-modal')
+    @slot ('id')
       addrecipient
     @endslot
 
@@ -186,7 +212,7 @@
               <div class="row appendhere">
                 <div class="col-5">
                   <input type="text" class="form-control form-control-sm margin-bot" 
-                  name="name[]" placeholder="Name" required="" maxlength="10">
+                  name="name[]" placeholder="Name" required="" maxlength="20">
                 </div>
                 <div class="col-7">
                   <input type="text" class="form-control form-control-sm margin-bot" 
@@ -201,6 +227,46 @@
         </div>
         <div class="col-12">
           <a href="#" class="text-sm float-right another"><i class="fa fa-plus"></i> Add another input field</a>
+        </div>
+      </div>
+          
+    @endslot
+
+  @endcomponent
+
+  @component ('layouts.dashboard.sm-modal')
+    @slot ('id')
+      editRecipient
+    @endslot
+
+    @slot ('title')
+      <i class="fa fa-plus-circle"></i> Edit recipient
+    @endslot
+
+    @slot ('modalBody') 
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <form id="reditForm" action="" method="POST">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="_method" value="PUT">
+            <input type="hidden" name="recipient" value="{{ $sms->recipient }}">
+            
+            <div class="form-group">
+              <div class="row appendhere">
+                <div class="col-5">
+                  <input type="text" class="form-control form-control-sm margin-bot" 
+                  name="name" id="rname" placeholder="Name" required="" maxlength="20">
+                </div>
+                <div class="col-7">
+                  <input type="text" class="form-control form-control-sm margin-bot" 
+                  name="phone" id="rphone" placeholder="Phone Number" required="" maxlength="12">
+                </div>
+              </div>
+            </div>
+            <div class="form-group no-margin-bottom">
+              <button type="submit" class="btn btn-info btn-block">Submit</button>
+            </div>
+          </form>
         </div>
       </div>
           

@@ -12,14 +12,33 @@ $(document).ready(function(){
                url:"/sms/"+id+"/edit",
                method:"GET",
                success:function(data){
-               	// console.log(data.body);
+                // console.log(data.body);
                     $('.msg2send').hide();
-               	  	$('#method').val('PUT');
-          					$('#bodyEdit').show().text(data.body);
-          					$('.title').html("<i class='fa fa-edit'></i> &nbsp"+data.recipient);
-          					$('#smsForm').attr("action", "/sms/"+id+"/update");
-          					$('#smsForm .btn-info').text('Update');
-          					$('#editSms').modal('show');
+                    $('#method').val('PUT');
+                    $('#bodyEdit').show().text(data.body);
+                    $('.title').html("<i class='fa fa-edit'></i> &nbsp"+data.recipient);
+                    $('#smsForm').attr("action", "/sms/"+id+"/update");
+                    $('#smsForm .btn-info').text('Update');
+                    $('#editSms').modal('show');
+               }
+          });
+     }
+  });
+
+  $('.editRecipient').on("click", function () {
+   var id = $(this).data('id');
+   // console.log("id = "+id);
+   if(id != '')
+     {
+          $.ajax({
+               url:"/custom/"+id+"/edit",
+               method:"GET",
+               success:function(data){
+               	// console.log(data);
+                    $('#reditForm').attr("action", "/custom/"+id+"/update")
+          					$('#rname').val(data.name);
+          					$('#rphone').val(data.phone_number);
+          					$('#editRecipient').modal('show');
                }
           });
      }
@@ -96,6 +115,14 @@ $(document).ready(function(){
       
       $('#customDelete').attr("action", "/sms/"+id+"/delete");
       $('#deleteCustom').modal('show');
+  });
+
+ $('.deleteRecipient').on("click", function () {
+      var id = $(this).data('id');
+      console.log(id);
+      
+      $('#rDelete').attr("action", "/custom/"+id+"/delete");
+      $('#deleteRecipient').modal('show');
   });
 
   $('#addRecipients').on('click', function(){

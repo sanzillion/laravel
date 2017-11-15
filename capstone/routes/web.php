@@ -113,8 +113,11 @@ Route::group(['middleware' => 'revalidate'], function(){
 
 	Route::get('/sms/{sms}/custom', 'CustomController@index');
 	Route::delete('/sms/{sms}/delete', 'CustomController@destroy');
+	Route::delete('/custom/{recipient}/delete', 'CustomController@delete');
 	Route::post('/sms/recipient', 'CustomController@create');
 	Route::post('/custom/populate', 'CustomController@populate');
+	Route::get('/custom/{custom}/edit', 'CustomController@edit');
+	Route::put('/custom/{custom}/update', 'CustomController@update');
 
 	Route::post('/send/create', 'SendController@create');
 	Route::get('/get/{code}', 'SendController@get');

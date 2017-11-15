@@ -41,15 +41,39 @@ class CustomController extends Controller
 
     	session()->flash('message', 'Added Successfully!');
         return redirect()->back();
+    }
 
+    public function edit(Custom $custom){
+        return $custom;
+    }
+
+    public function update(Custom $custom){
+        $this->validate(request(), [
+            'name' => 'required|unique:customs,name,' . $custom->id,   
+            'phone' => 'required|numeric|min:12'
+        ]);
+
+        $custom->name = request('name');
+        $custom->phone_number = request('phone');
+        $custom->save();
+
+        session()->flash('message', 'Updated Successfully!');
+        return redirect()->back();
     }
 
     public function destroy(Sms $sms){
-    	Custom::where('type', $sms->recipient)->delete();
-    	$sms->delete();
+        Custom::where('type', $sms->recipient)->delete();
+        $sms->delete();
 
         session()->flash('message', 'Deleted Successfully!');
         return redirect('/sms');
+    }
+
+    public function delete(Custom $recipient){
+    	$recipient->delete();
+
+        session()->flash('message', 'Deleted Successfully!');
+        return redirect()->back();
     }
 
     public function populate(){
